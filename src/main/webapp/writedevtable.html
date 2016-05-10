@@ -92,7 +92,7 @@
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 				<p>Please fill out each field, if left blank a null value will
 					be added to the database</p>
-				<form action="ServletDev" method="post">
+				<form action="DevServlet" method="post">
 					<div class="row control-group">
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
@@ -121,6 +121,17 @@
 								placeholder="Last Name" name="form-last_name" id="last_name"
 								required
 								data-validation-required-message="Please enter the last name.">
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+					<div class="row control-group">
+						<!-- 2 -->
+						<div
+							class="form-group col-xs-12 floating-label-form-group controls">
+							<label>Password</label> <input type="text" class="form-control"
+								placeholder="Password" name="form-password" id="password"
+								required
+								data-validation-required-message="Please enter a password.">
 							<p class="help-block text-danger"></p>
 						</div>
 					</div>
