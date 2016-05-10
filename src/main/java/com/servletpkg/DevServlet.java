@@ -50,8 +50,8 @@ public class DevServlet extends HttpServlet {
 			if (DevConn.passOrFail) {
 				response.sendRedirect("writedevtable.html");
 				System.out.println("Dev has been added to the db.");
-			}
-		} // else
-
+			
+			} // else
+		} 
 	}
 }
