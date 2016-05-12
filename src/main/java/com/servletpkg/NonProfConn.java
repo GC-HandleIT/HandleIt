@@ -60,16 +60,16 @@ public class NonProfConn {
 
 				NonProfObj npForDev = new NonProfObj();
 
-				npForDev.setId(resSet.getString("`id`"));
-				npForDev.setName(resSet.getString("`name`"));
-				npForDev.setPassword(resSet.getString("`password`"));
-				npForDev.setLink(resSet.getString("`link`"));
-				npForDev.setContactPerson(resSet.getString("`contact_person`"));
-				npForDev.setEmailAddress(resSet.getString("`email_address`"));
-				npForDev.setFocus(resSet.getString("`focus`"));
-				npForDev.setLocation(resSet.getString("`location`"));
-				npForDev.setProjectType(resSet.getString("`project_type`"));
-				npForDev.setProjectDescription(resSet.getString("`project_description`"));
+				npForDev.setId(resSet.getString("id"));
+				npForDev.setName(resSet.getString("name"));
+				npForDev.setPassword(resSet.getString("password"));
+				npForDev.setLink(resSet.getString("link"));
+				npForDev.setContactPerson(resSet.getString("contact_person"));
+				npForDev.setEmailAddress(resSet.getString("email_address"));
+				npForDev.setFocus(resSet.getString("focus"));
+				npForDev.setLocation(resSet.getString("location"));
+				npForDev.setProjectType(resSet.getString("project_type"));
+				npForDev.setProjectDescription(resSet.getString("project_description"));
 
 				return npForDev;
 			}
@@ -124,16 +124,16 @@ public class NonProfConn {
 
 					NonProfObj npForLogin = new NonProfObj();
 
-					npForLogin.setId(resSet.getString("`id`"));
-					npForLogin.setName(resSet.getString("`name`"));
-					npForLogin.setPassword(resSet.getString("`password`"));
-					npForLogin.setLink(resSet.getString("`link`"));
-					npForLogin.setContactPerson(resSet.getString("`contact_person`"));
-					npForLogin.setEmailAddress(resSet.getString("`email_address`"));
-					npForLogin.setFocus(resSet.getString("`focus`"));
-					npForLogin.setLocation(resSet.getString("`location`"));
-					npForLogin.setProjectType(resSet.getString("`project_type`"));
-					npForLogin.setProjectDescription(resSet.getString("`project_description`"));
+					npForLogin.setId(resSet.getString("id"));
+					npForLogin.setName(resSet.getString("name"));
+					npForLogin.setPassword(resSet.getString("password"));
+					npForLogin.setLink(resSet.getString("link"));
+					npForLogin.setContactPerson(resSet.getString("contact_person"));
+					npForLogin.setEmailAddress(resSet.getString("email_address"));
+					npForLogin.setFocus(resSet.getString("focus"));
+					npForLogin.setLocation(resSet.getString("location"));
+					npForLogin.setProjectType(resSet.getString("project_type"));
+					npForLogin.setProjectDescription(resSet.getString("project_description"));
 
 					return npForLogin;
 				}
