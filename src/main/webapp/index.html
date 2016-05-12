@@ -52,8 +52,20 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<!-- <li><a href="index.html">Home</a></li> -->
-					<li><a href="login.html">Login</a></li>
-					<li><a href="sign-up.html">Sign-Up</a></li>
+					<li style="display: inline-block;" class="dropdown">
+						<a href="javascript:void(0)" class="dropbtnlog" onclick="dropFunctionLog()">Login</a>
+						<div style="display: none; position: absolute;" class="dropdown-content" id="loginDropdown">
+							<a href="devlogin.html">Developer</a>
+							<a href="nplogin.html">NonProfit</a>
+							</div>
+						</li>
+						<li style="display: inline-block;" class="dropdown">
+						<a href="javascript:void(0)" class="dropbtn" onclick="dropFunctionSign()">Sign-Up</a>
+						<div style="display: none; position: absolute;" class="dropdown-content" id="signDropdown">
+							<a href="writedevtable.html">Developer</a>
+							<a href="writenptable.html">NonProfit</a>
+							</div>
+						</li>
 					<li><a href="contact.html">Contact</a></li>
 				</ul>
 			</div>
@@ -130,16 +142,6 @@
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 					<ul class="list-inline text-center">
-						<li><a href="#"> <span class="fa-stack fa-lg"> <i
-									class="fa fa-circle fa-stack-2x"></i> <i
-									class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-							</span>
-						</a></li>
-						<li><a href="#"> <span class="fa-stack fa-lg"> <i
-									class="fa fa-circle fa-stack-2x"></i> <i
-									class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-							</span>
-						</a></li>
 						<li><a href="https://github.com/GC-HandleIT/HandleIt"
 							target="_blank"> <span class="fa-stack fa-lg"> <i
 									class="fa fa-circle fa-stack-2x"></i> <i
@@ -162,6 +164,30 @@
 
 	<!-- Custom Theme JavaScript -->
 	<script src="js/clean-blog.min.js"></script>
+
+	<script>
+		function dropFunctionLog() {
+			document.getElementById("loginDropdown").classList.toggle("show");
+		}
+
+		function dropFunctionSign() {
+			document.getElementById("signDropdown").classList.toggle("show");
+		}
+
+		window.onclick = function(e) {
+			if (!e.target.matches('.dropbtnlog')) {
+
+				var dropdowns = document.getElementByClassName("dropdown-content");
+				for (var i = 0; i < dropdowns.length; i++) {
+					var openDropdown = dropdowns[i];
+
+					if (openDropdown.classList.contains('show')) {
+						openDropdown.classList.remove('show');
+					}
+				}
+			}
+		}
+	</script>
 
 </body>
 
