@@ -14,7 +14,7 @@ public class DevServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	DevObj devToAddToDB = new DevObj();
-	DevObj searchToLogin = new DevObj();
+	DevObj searchADev = new DevObj();
 
 	public DevServlet() {
 		super();
@@ -30,28 +30,43 @@ public class DevServlet extends HttpServlet {
 
 		String theID = request.getParameter("form-id");
 
-		if (!(theID.equals(null))) {
+		try {
 
-			devToAddToDB.setId(request.getParameter("form-id"));
-			devToAddToDB.setFirstName(request.getParameter("form-first_name"));
-			devToAddToDB.setLastName(request.getParameter("form-last_name"));
-			devToAddToDB.setPassword(request.getParameter("form-password"));
-			devToAddToDB.setEmailAddress(request.getParameter("form-email_address"));
-			devToAddToDB.setLocation(request.getParameter("form-location"));
-			devToAddToDB.setPicUrl(request.getParameter("form-picture_url"));
-			devToAddToDB.setProfileUrl(request.getParameter("form-profile_url"));
-			devToAddToDB.setProjects(request.getParameter("form-projects"));
-			devToAddToDB.setSkills(request.getParameter("form-skills"));
+			if (!(theID.equals(null))) {
 
-			System.out.println("Collected a dev table entry.");
+				devToAddToDB.setId(request.getParameter("form-id"));
+				devToAddToDB.setFirstName(request.getParameter("form-first_name"));
+				devToAddToDB.setLastName(request.getParameter("form-last_name"));
+				devToAddToDB.setPassword(request.getParameter("form-password"));
+				devToAddToDB.setEmailAddress(request.getParameter("form-email_address"));
+				devToAddToDB.setLocation(request.getParameter("form-location"));
+				devToAddToDB.setPicUrl(request.getParameter("form-picture_url"));
+				devToAddToDB.setProfileUrl(request.getParameter("form-profile_url"));
+				devToAddToDB.setProjects(request.getParameter("form-projects"));
+				devToAddToDB.setSkills(request.getParameter("form-skills"));
 
-			DevConn.writeToDevTable(devToAddToDB);
+				System.out.println("Collected a dev table entry.");
 
-			if (DevConn.passOrFail) {
-				response.sendRedirect("writedevtable.html");
-				System.out.println("Dev has been added to the db.");
+				DevConn.writeToDevTable(devToAddToDB);
+
+				if (DevConn.passOrFail) {
+					response.sendRedirect("writedevtable.html");
+					System.out.println("Dev has been added to the db.");
+				}
+			}
+
+		} catch (NullPointerException e) {
 			
-			} // else
-		} 
+			String searchByProjects = request.getParameter("project_type");
+			String searchBySkills = request.getParameter("skill_sets");
+
+			System.out.println(searchByProjects);
+			System.out.println(searchBySkills);
+			
+			response.sendRedirect("readdevtable.html");
+			
+			
+		}
+
 	}
 }
