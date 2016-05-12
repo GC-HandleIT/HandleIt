@@ -110,41 +110,41 @@ public class DevConn {
 		}
 	}
 
-	public static DevObj devLoginSearch(String devLoginEmail) {
+	public static boolean devLoginSearch(DevObj loginDev) {
+
+		String email = loginDev.getEmailAddress();
+		String password = loginDev.getPassword();
 
 		try {
 
 			initConnToDatabase();
 			stmt = conn.createStatement();
-			resSet = stmt.executeQuery("SELECT * FROM `handleitdb`.`devtable`; ");
+			resSet = stmt.executeQuery("SELECT * FROM `handleitdb`.`devtable` where `email_address` like '" + email
+					+ "' and `password` like '" + password + "';");
 
 			while (resSet.next()) {
-				String devSearchParam = resSet.getString("`email`");
 
-				if (devSearchParam.equalsIgnoreCase(devLoginEmail)) {
+				DevObj devForLogin = new DevObj();
 
-					DevObj devForLogin = new DevObj();
+				devForLogin.setId(resSet.getString("id"));
+				devForLogin.setFirstName(resSet.getString("first_name"));
+				devForLogin.setLastName(resSet.getString("last_name"));
+				devForLogin.setPassword(resSet.getString("password"));
+				devForLogin.setEmailAddress(resSet.getString("email_address"));
+				devForLogin.setLocation(resSet.getString("location"));
+				devForLogin.setPicUrl(resSet.getString("picture_url"));
+				devForLogin.setProfileUrl(resSet.getString("public_profile_url"));
+				devForLogin.setProjects(resSet.getString("projects"));
+				devForLogin.setSkills(resSet.getString("skills"));
 
-					devForLogin.setId(resSet.getString("`id`"));
-					devForLogin.setFirstName(resSet.getString("`first_name`"));
-					devForLogin.setLastName(resSet.getString("`last_name`"));
-					devForLogin.setPassword(resSet.getString("`password`"));
-					devForLogin.setEmailAddress(resSet.getString("`email_address`"));
-					devForLogin.setLocation(resSet.getString("`location`"));
-					devForLogin.setPicUrl(resSet.getString("`picture_url`"));
-					devForLogin.setProfileUrl(resSet.getString("`public_profile_url`"));
-					devForLogin.setProjects(resSet.getString("`projects`"));
-					devForLogin.setSkills(resSet.getString("`skills`"));
-
-					return devForLogin;
-				}
+				return true;
 			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
-		return null;
+		return false;
 	}
 
 	private static String insertToTable = "INSERT INTO `handleitdb`.`devtable` "

@@ -109,34 +109,34 @@ public class NonProfConn {
 		}
 	}
 
-	public static NonProfObj npLoginSearch(String npLoginEmail) {
+	public static NonProfObj npLoginSearch(NonProfObj loginNP) {
+
+		String email = loginNP.getEmailAddress();
+		String password = loginNP.getPassword();
 
 		try {
 
 			initConnToDatabase();
 			stmt = conn.createStatement();
-			resSet = stmt.executeQuery("SELECT * FROM `handleitdb`.`nonprofittable`; ");
+			resSet = stmt.executeQuery("SELECT * FROM `handleitdb`.`nonprofittable` where `email_address` like '"
+					+ email + "' and `password` like '" + password + "';");
 
 			while (resSet.next()) {
-				String devSearchParam = resSet.getString("`email`");
 
-				if (devSearchParam.equalsIgnoreCase(npLoginEmail)) {
+				NonProfObj npForLogin = new NonProfObj();
 
-					NonProfObj npForLogin = new NonProfObj();
+				npForLogin.setId(resSet.getString("`id`"));
+				npForLogin.setName(resSet.getString("`name`"));
+				npForLogin.setPassword(resSet.getString("`password`"));
+				npForLogin.setLink(resSet.getString("`link`"));
+				npForLogin.setContactPerson(resSet.getString("`contact_person`"));
+				npForLogin.setEmailAddress(resSet.getString("`email_address`"));
+				npForLogin.setFocus(resSet.getString("`focus`"));
+				npForLogin.setLocation(resSet.getString("`location`"));
+				npForLogin.setProjectType(resSet.getString("`project_type`"));
+				npForLogin.setProjectDescription(resSet.getString("`project_description`"));
 
-					npForLogin.setId(resSet.getString("`id`"));
-					npForLogin.setName(resSet.getString("`name`"));
-					npForLogin.setPassword(resSet.getString("`password`"));
-					npForLogin.setLink(resSet.getString("`link`"));
-					npForLogin.setContactPerson(resSet.getString("`contact_person`"));
-					npForLogin.setEmailAddress(resSet.getString("`email_address`"));
-					npForLogin.setFocus(resSet.getString("`focus`"));
-					npForLogin.setLocation(resSet.getString("`location`"));
-					npForLogin.setProjectType(resSet.getString("`project_type`"));
-					npForLogin.setProjectDescription(resSet.getString("`project_description`"));
-
-					return npForLogin;
-				}
+				return npForLogin;
 			}
 
 		} catch (SQLException e) {
