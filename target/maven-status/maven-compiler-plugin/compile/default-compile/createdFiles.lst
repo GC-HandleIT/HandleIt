@@ -1,0 +1,9 @@
+com\servletpkg\DevServlet.class
+com\HandleIT\LaunchIndex.class
+com\servletpkg\NonProfServlet.class
+com\utilities\Utilities.class
+com\utilities\Validation.class
+com\servletpkg\NonProfConn.class
+com\servletpkg\DevConn.class
+com\HandleIT\DevObj.class
+com\HandleIT\NonProfObj.class

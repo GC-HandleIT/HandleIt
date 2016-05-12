@@ -101,6 +101,7 @@ public class DevConn {
 			prepStmt.setString(10, newDevObj.getSkills());
 
 			prepStmt.executeUpdate();
+
 			passOrFail = true;
 
 		} catch (SQLException e) {
