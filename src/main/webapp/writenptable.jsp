@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
 <head>
@@ -6,10 +8,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="Dev DB Entryform" content="">
+<meta name="NP DB Entryform" content="">
 <meta name="ErinBergman" content="">
 
-<title>Dev Table Entry Form</title>
+<title>NonProfit Sign-up</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -43,17 +45,17 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">HandleIT</a>
+				<a class="navbar-brand" href="index.jsp">HandleIT</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1"> 
+				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<!-- <li><a href="index.html">Home</a></li> -->
-					<li><a href="writenptable.html">Non-Profits Write</a></li>
-					<li><a href="readdevtable.html">Developer Read</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<!-- <li><a href="index.jsp">Home</a></li> -->
+					<!-- <li><a href="nonprofit.jsp">Non-Profits Table</a></li>
+					<li><a href="developer.jsp">Developers Write</a></li> -->
+					<li><a href="contact.jsp">Contact</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -64,13 +66,13 @@
 	<!-- Page Header -->
 	<!-- Set your background image for this header on the line below. -->
 	<header class="intro-header"
-		style="background-image: url('img/entry.jpg')">
+		style="background-image: url('img/signup.jpg')">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 					<div class="page-heading">
-						<h1 style="text-shadow: 2px 2px 4px #000000">Dev Table Entry
-							Form</h1>
+						<h1 style="text-shadow: 2px 2px 4px #000000">NonProfit
+							Sign-Up Form</h1>
 						<hr class="small">
 						<span style="text-shadow: 2px 2px 4px #000000" class="subheading"></span>
 					</div>
@@ -85,7 +87,7 @@
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 				<p>Please fill out each field, if left blank a null value will
 					be added to the database</p>
-				<form action="DevServlet" method="post">
+				<form action="NonProfServlet" method="post">
 					<div class="row control-group">
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
@@ -99,10 +101,9 @@
 						<!-- 2 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
-							<label>First Name</label> <input type="text" class="form-control"
-								placeholder="First Name" name="form-first_name" id="first_name"
-								required
-								data-validation-required-message="Please enter the first name.">
+							<label>Name</label> <input type="text" class="form-control"
+								placeholder="NonProfit Name" name="form-name" id="name" required
+								data-validation-required-message="Please enter the NonProfit name.">
 							<p class="help-block text-danger"></p>
 						</div>
 					</div>
@@ -110,21 +111,10 @@
 						<!-- 3 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
-							<label>Last Name</label> <input type="text" class="form-control"
-								placeholder="Last Name" name="form-last_name" id="last_name"
-								required
-								data-validation-required-message="Please enter the last name.">
-							<p class="help-block text-danger"></p>
-						</div>
-					</div>
-					<div class="row control-group">
-						<!-- 2 -->
-						<div
-							class="form-group col-xs-12 floating-label-form-group controls">
 							<label>Password</label> <input type="text" class="form-control"
 								placeholder="Password" name="form-password" id="password"
 								required
-								data-validation-required-message="Please enter a password.">
+								data-validation-required-message="Please enter your password.">
 							<p class="help-block text-danger"></p>
 						</div>
 					</div>
@@ -132,10 +122,10 @@
 						<!-- 4 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
-							<label>Email Address</label> <input type="text"
-								class="form-control" placeholder="Email Address"
-								name="form-email_address" id="email_address" required
-								data-validation-required-message="Please enter the email address.">
+							<label>NonProfit Link</label> <input type="text"
+								class="form-control" placeholder="NonProfit Link"
+								name="form-link" id="link" required
+								data-validation-required-message="Please enter a link for the NonProfit.">
 							<p class="help-block text-danger"></p>
 						</div>
 					</div>
@@ -143,10 +133,10 @@
 						<!-- 5 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
-							<label>Location</label> <input type="text" class="form-control"
-								placeholder="Location" name="form-location" id="location"
-								required
-								data-validation-required-message="Please enter the location.">
+							<label>Contact Person</label> <input type="text"
+								class="form-control" placeholder="Contact Person"
+								name="form-contact_person" id="contact_person" required
+								data-validation-required-message="Please enter the name of the contact person.">
 							<p class="help-block text-danger"></p>
 						</div>
 					</div>
@@ -154,38 +144,50 @@
 						<!-- 6 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
-							<label>Picture Url</label> <input type="text"
-								class="form-control" placeholder="Picture Url"
-								name="form-picture_url" id="picture_url">
+							<label>Email Address</label> <input type="text"
+								class="form-control" placeholder="Contact Person Email"
+								name="form-email" id="email" required
+								data-validation-required-message="Please enter the email address of the contact person.">
+							<p class="help-block text-danger"></p>
 						</div>
 					</div>
 					<div class="row control-group">
 						<!-- 7 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
-							<label>LinkedIn Profile Url</label> <input type="text"
-								class="form-control" placeholder="LinkedIn Profile Url"
-								name="form-profile_url" id="profile_url" required
-								data-validation-required-message="Please enter the profile url.">
-						</div>
-					</div>
-					<div class="row control-group">
-						<!-- 7 -->
-						<div
-							class="form-group col-xs-12 floating-label-form-group controls">
-							<label>Projects</label> <input type="text" class="form-control"
-								placeholder="Projects" name="form-projects" id="projects"
-								required
-								data-validation-required-message="Please enter any project types.">
+							<label>Focus</label> <input type="text" class="form-control"
+								placeholder="Focus" name="form-focus" id="focus">
 						</div>
 					</div>
 					<div class="row control-group">
 						<!-- 8 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
-							<label>Skills</label> <input type="text" class="form-control"
-								placeholder="Skills" name="form-skills" id="skills" required
-								data-validation-required-message="Please enter the skills.">
+							<label>Location</label> <input type="text" class="form-control"
+								placeholder="Location" name="form-location" id="location"
+								required
+								data-validation-required-message="Please enter the location of the NonProfit.">
+						</div>
+					</div>
+					<div class="row control-group">
+						<!-- 9 -->
+						<div
+							class="form-group col-xs-12 floating-label-form-group controls">
+							<label>Project Type</label> <input type="text"
+								class="form-control" placeholder="Project Type"
+								name="form-project_type" id="project_type" required
+								data-validation-required-message="Please enter the project type.">
+						</div>
+					</div>
+					<div class="row control-group">
+						<!-- 10 -->
+						<div
+							class="form-group col-xs-12 floating-label-form-group controls">
+							<label>Project Description</label> <input type="text"
+								class="form-control" placeholder="Project Description"
+								name="form-project_description" id="project_description"
+								required
+								data-validation-required-message="Please enter the project description.">
 							<p class="help-block text-danger"></p>
 						</div>
 						<br>
@@ -209,7 +211,11 @@
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 					<ul class="list-inline text-center">
-					
+						<li><a href="#"> <span class="fa-stack fa-lg"> <i
+									class="fa fa-circle fa-stack-2x"></i> <i
+									class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+							</span>
+						</a></li>
 						<li><a href="https://github.com/GC-HandleIT/HandleIt"
 							target="_blank"> <span class="fa-stack fa-lg"> <i
 									class="fa fa-circle fa-stack-2x"></i> <i

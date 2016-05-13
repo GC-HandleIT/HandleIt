@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
 <head>
@@ -6,10 +8,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="Dev DB Entryform" content="">
-<meta name="ErinBergman" content="">
+<meta name="description" content="">
+<meta name="author" content="">
 
-<title>NonProfit Login Page</title>
+<title>Contact Us</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -43,15 +45,17 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">HandleIT</a>
+				<a class="navbar-brand" href="index.jsp">HandleIT</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1"> 
+				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<!-- <li><a href="index.html">Home</a></li> -->
-					<li><a href="contact.html">Contact</a></li>
+					<!-- <li><a href="index.jsp">Home</a></li> -->
+					<li><a href="Login.jsp">Login</a></li>
+					<li><a href="sign-up.jsp">Sign-UP</a></li>
+					<li><a href="contact.jsp">Contact</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -62,42 +66,65 @@
 	<!-- Page Header -->
 	<!-- Set your background image for this header on the line below. -->
 	<header class="intro-header"
-		style="background-image: url('img/devlogin.jpg')">
+		style="background-image: url('img/contact.jpg')">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 					<div class="page-heading">
-						<h1 style="text-shadow: 2px 2px 4px #000000">NonProfit Login Page</h1>
+						<h1 style="text-shadow: 2px 2px 4px #000000;">Contact Us</h1>
 						<hr class="small">
-						<span style="text-shadow: 2px 2px 4px #000000" class="subheading"></span>
+						<span style="text-shadow: 2px 2px 2px #000000; font-weight: 300;"
+							class="subheading"></span>
 					</div>
 				</div>
 			</div>
 		</div>
 	</header>
+
 	<!-- Main Content -->
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-				<p>Please enter your email and password to login</p>
-				<form action="ServletDev" method="post">
+				<p>Questions? Comments? Concerns? We will make every attempt to
+					respond to you within 24 hours!</p>
+
+				<form name="sentMessage" id="contactForm" novalidate>
 					<div class="row control-group">
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
-							<label>Email</label> <input type="text" class="form-control"
-								placeholder="Email" name="form-login_email" id="v" required
-								data-validation-required-message="Please enter your email.">
+							<label>Name</label> <input type="text" class="form-control"
+								placeholder="Name" id="name" required
+								data-validation-required-message="Please enter your name.">
 							<p class="help-block text-danger"></p>
 						</div>
 					</div>
 					<div class="row control-group">
-						<!-- 2 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
-							<label>Password</label> <input type="password"
-								class="form-control" placeholder="Password"
-								name="form-login_password" id="login_password" required
-								data-validation-required-message="Please enter your password.">
+							<label>Email Address</label> <input type="email"
+								class="form-control" placeholder="Email Address" id="email"
+								required
+								data-validation-required-message="Please enter your email address.">
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+					<div class="row control-group">
+						<div
+							class="form-group col-xs-12 floating-label-form-group controls">
+							<label>Phone Number</label> <input type="tel"
+								class="form-control" placeholder="Phone Number" id="phone"
+								required
+								data-validation-required-message="Please enter your phone number.">
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+					<div class="row control-group">
+						<div
+							class="form-group col-xs-12 floating-label-form-group controls">
+							<label>Message</label>
+							<textarea rows="5" class="form-control" placeholder="Message"
+								id="message" required
+								data-validation-required-message="Please enter a message."></textarea>
 							<p class="help-block text-danger"></p>
 						</div>
 					</div>
@@ -105,7 +132,7 @@
 					<div id="success"></div>
 					<div class="row">
 						<div class="form-group col-xs-12">
-							<button id="subBtn" type="submit" class="btn btn-default">Submit</button>
+							<button type="submit" class="btn btn-default">Send</button>
 						</div>
 					</div>
 				</form>
@@ -113,11 +140,22 @@
 		</div>
 	</div>
 
+	<hr>
+
 	<!-- Footer -->
 	<footer>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					<ul class="list-inline text-center">
+
+						<li><a href="https://github.com/GC-HandleIT/HandleIt"
+							target="_blank"> <span class="fa-stack fa-lg"> <i
+									class="fa fa-circle fa-stack-2x"></i> <i
+									class="fa fa-github fa-stack-1x fa-inverse"></i>
+							</span>
+						</a></li>
+					</ul>
 					<p class="copyright text-muted">Copyright &copy; The HandleIT
 						Project 2016</p>
 				</div>
@@ -133,37 +171,6 @@
 
 	<!-- Custom Theme JavaScript -->
 	<script src="js/clean-blog.min.js"></script>
-
-
-	<script>
-		document.getElementById("dbEF").onclick = function() {
-			password()
-		};
-
-		function password() {
-			var testV = 1;
-			var pass1 = prompt('Please Enter Your Password', ' ');
-			while (testV < 3) {
-				if (!pass1)
-
-					document
-				if (pass1.toLowerCase() == "letmein") {
-					document.getElementById("subBtn").disabled = false;
-					break;
-				}
-				testV += 1;
-				var pass1 = prompt(
-						'Access Denied - Password Incorrect, Please Try Again.',
-						'Password');
-			}
-			if (pass1.toLowerCase() != "password" & testV == 3)
-				document.getElementById("subBtn").disabled = true;
-			return " ";
-		}
-	</script>
-
-
-
 
 </body>
 

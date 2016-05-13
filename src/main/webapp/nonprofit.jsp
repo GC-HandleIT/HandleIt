@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
 <head>
@@ -9,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Search for a Developer</title>
+<title>Non-Profit Portal</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -28,13 +30,6 @@
 	href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
 	rel='stylesheet' type='text/css'>
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 
 <body>
@@ -50,17 +45,18 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">HandleIT</a>
+				<a class="navbar-brand" href="index.jsp">HandleIT</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<!-- <li><a href="index.html">Home</a></li> -->
-					<li><a href="writenptable.html">Non-Profits Write</a></li>
-					<li><a href="writedevtable.html">Developer Write</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<!-- <li><a href="index.jsp">Home</a></li>
+					<li><a href="about.jsp">About</a></li> -->
+					<li><a href="nonprofitportal.jsp"
+						onclick="return openWindow();">Login</a></li>
+					<li><a href="contact.jsp">Contact</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -71,15 +67,16 @@
 	<!-- Page Header -->
 	<!-- Set your background image for this header on the line below. -->
 	<header class="intro-header"
-		style="background-image: url('img/read.jpg')">
+		style="background-image: url('img/nonprofportal.jpg')">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 					<div class="post-heading">
-						<h1 style="text-shadow: 2px 2px 4px #000000; text-align: center;">Search
-							for a Developer</h1>
-						<hr class="small">
-						<span style="text-shadow: 2px 2px 4px #000000" class="subheading"></span>
+						<h1 style="text-shadow: 2px 2px 4px #000000; text-align: center;">For
+							the Non-Profit</h1>
+						<h2
+							style="text-align: center; text-shadow: 2px 2px 2px #000000; font-weight: 300;"
+							class="subheading">Giving Back to Those Who Give</h2>
 					</div>
 				</div>
 			</div>
@@ -91,47 +88,31 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					<form action="DevServlet" method="post">
-						<h1>Search by</h1>
-						<hr>
-						<table style="width: 100%" align="center"; >
-							<tr style="padding: 5m">
-								<th>Project Type</th>
-								<th>Skill Sets</th>
-							</tr>
+					<h2 style="text-align: center;" class="section-heading">Who
+						are you?</h2>
 
-							<td><select name="project_type">
-									<option value="*">All</option>
-									<option value="database">Databases</option>
-									<option value="Website">Simple Website</option>
-									<option value="web_app">Web Applications</option>
-									<option value="android_app">Android Applications</option>
-									<option value="ios_app">IOS Applications</option>
-							</select></td>
+					<p>According to a 2005 Guidestar Newsletter survey of
+						"Non-profit's Three Greatest Challenges" getting the word out
+						about the nonprofit and what they do was the number three greatest
+						challenge. This is clearly a hurdle easily jumped by having a
+						website that is inviting to the population they are seeking to
+						serve. HandleIT offers the nonprofit a free resource to connect
+						with developers seeking to give back to the community. While
+						offering the developer a website or application to use in their
+						portfolio .</p>
 
-							<td><select name="skill_sets">
-									<option value="*">All</option>
-									<option value=".net">.NET</option>
-									<option value="asp.net">ASP.NET</option>
-									<option value="c#">C#</option>
-									<option value="c++">C++</option>
-									<option value="html_css">HTML/ CSS</option>
-									<option value="java">Java</option>
-									<option value="javascript">JavaScript</option>
-									<option value="sql_databases">SQL Databases</option>
-									<option value="python">Python</option>
-									<option value="ruby">Ruby</option>
-									<option value="Swift">Swift</option>
-							</select></td>
-						</table>
-						<hr>
-						<div id="success"></div>
-						<div class="row">
-							<div class="form-group col-xs-12">
-								<button id="subBtn" type="submit" class="btn btn-default">Submit</button>
-							</div>
-						</div>
-					</form>
+					<p>From the same Guidestar survey 'Finding the money to
+						accomplish our mission', 'Staffing', and 'building public trust-in
+						us and/or in the sector as a whole' were also included as
+						challenges to a nonprofit. Through a well designed and thought-out
+						website or application(desktop and/or mobile) we seek to help
+						nonprofits combat all of the problems and get you back out doing
+						what you love to do.</p>
+
+					<p></p>
+					<a
+						href="https://www.guidestar.org/Articles.aspx?path=/rxa/news/articles/2005/nonprofits-three-greatest-challenges.aspx"
+						target="_blank">2005 Guidestar Survey Results</a>
 				</div>
 			</div>
 		</div>
@@ -139,13 +120,13 @@
 
 	<hr>
 
-<!-- Footer -->
+	<!-- Footer -->
 	<footer>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 					<ul class="list-inline text-center">
-					
+
 						<li><a href="https://github.com/GC-HandleIT/HandleIt"
 							target="_blank"> <span class="fa-stack fa-lg"> <i
 									class="fa fa-circle fa-stack-2x"></i> <i
@@ -168,6 +149,15 @@
 
 	<!-- Custom Theme JavaScript -->
 	<script src="js/clean-blog.min.js"></script>
+
+	<script type="text/javascript">
+		var loginWindow;
+		function openWindow() {
+			loginWindow = window.open("", "_blank",
+					"top=500,left=500,width=400,height=400");
+
+		}
+	</script>
 
 </body>
 

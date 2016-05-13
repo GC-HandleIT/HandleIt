@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
 <head>
@@ -43,17 +45,17 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">Start Bootstrap</a>
+				<a class="navbar-brand" href="index.jsp">Start Bootstrap</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="post.html">Sample Post</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="index.jsp">Home</a></li>
+					<li><a href="about.jsp">About</a></li>
+					<li><a href="post.jsp">Sample Post</a></li>
+					<li><a href="contact.jsp">Contact</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -177,7 +179,7 @@
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 					<ul class="list-inline text-center">
-					
+
 						<li><a href="#"> <span class="fa-stack fa-lg"> <i
 									class="fa fa-circle fa-stack-2x"></i> <i
 									class="fa fa-github fa-stack-1x fa-inverse"></i>
