@@ -83,12 +83,12 @@
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 				<p>Please enter your email and password to login</p>
-				<form action="ServletDev" method="post">
+				<form action="LoginServlet" method="post">
 					<div class="row control-group">
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
 							<label>Email</label> <input type="text" class="form-control"
-								placeholder="Email" name="form-login_email" id="v" required
+								placeholder="Email" name="form-np_login_email" id="np_login_email" required
 								data-validation-required-message="Please enter your email.">
 							<p class="help-block text-danger"></p>
 						</div>
@@ -99,7 +99,7 @@
 							class="form-group col-xs-12 floating-label-form-group controls">
 							<label>Password</label> <input type="password"
 								class="form-control" placeholder="Password"
-								name="form-login_password" id="login_password" required
+								name="form-np_login_password" id="np_login_password" required
 								data-validation-required-message="Please enter your password.">
 							<p class="help-block text-danger"></p>
 						</div>

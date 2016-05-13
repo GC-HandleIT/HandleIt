@@ -1,5 +1,7 @@
+<%@page import="com.HandleIT.DevObj"%>
+<%@page import="com.servletpkg.DevConn"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
@@ -37,121 +39,107 @@
 
 	<!-- Navigation -->
 	<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-		<div class="container-fluid">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header page-scroll">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="index.jsp">HandleIT</a>
-			</div>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right">
-					<!-- <li><a href="index.jsp">Home</a></li> -->
-					<li><a href="writenptable.jsp">Non-Profits Write</a></li>
-					<li><a href="writedevtable.jsp">Developer Write</a></li>
-					<li><a href="contact.jsp">Contact</a></li>
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header page-scroll">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.jsp">HandleIT</a>
 		</div>
-		<!-- /.container -->
-	</nav>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="contact.jsp">Contact</a></li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container --> </nav>
 
 	<!-- Page Header -->
 	<!-- Set your background image for this header on the line below. -->
 	<header class="intro-header"
 		style="background-image: url('img/read.jpg')">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					<div class="post-heading">
-						<h1 style="text-shadow: 2px 2px 4px #000000; text-align: center;">Search
-							for a Developer</h1>
-						<hr class="small">
-						<span style="text-shadow: 2px 2px 4px #000000" class="subheading"></span>
-					</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<div class="post-heading">
+					<h1 style="text-shadow: 2px 2px 4px #000000; text-align: center;">Search
+						for a Developer</h1>
+					<hr class="small">
+					<span style="text-shadow: 2px 2px 4px #000000" class="subheading"></span>
 				</div>
 			</div>
 		</div>
+	</div>
 	</header>
 
 	<!-- Post Content -->
 	<article>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					<form action="DevServlet" method="post">
-						<h1>Search by</h1>
-						<hr>
-						<table style="width: 100%" align="center"; >
-							<tr style="padding: 5m">
-								<th>Project Type</th>
-								<th>Skill Sets</th>
-							</tr>
-							<td><select name="project_type">
-									<option value="*">All</option>
-									<option value="database">Databases</option>
-									<option value="Website">Simple Website</option>
-									<option value="web_app">Web Applications</option>
-									<option value="android_app">Android Applications</option>
-									<option value="ios_app">IOS Applications</option>
-							</select></td>
-							<td><select name="skill_sets">
-									<option value="*">All</option>
-									<option value=".net">.NET</option>
-									<option value="asp.net">ASP.NET</option>
-									<option value="c#">C#</option>
-									<option value="c++">C++</option>
-									<option value="html_css">HTML/ CSS</option>
-									<option value="java">Java</option>
-									<option value="javascript">JavaScript</option>
-									<option value="sql_databases">SQL Databases</option>
-									<option value="python">Python</option>
-									<option value="ruby">Ruby</option>
-									<option value="Swift">Swift</option>
-							</select></td>
-						</table>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<form action="DevServlet" method="post">
+					<%
+						if (!(DevConn.soughtDevs.isEmpty())) {
+							for (int i = 0; i < DevConn.soughtDevs.size(); i++) {
+								DevObj devForTable = new DevObj();
+								devForTable = DevConn.soughtDevs.get(i);
+					%>
+					<ul>
+						<li><%=devForTable.getFirstName()%></li>
+						<li><%=devForTable.getEmailAddress()%></li>
+						<li><%=devForTable.getLocation()%></li>
+						<li><a href="<%=devForTable.getProfileUrl()%>" target="_blank">Linked</a></li>
+						<li><%=devForTable.getProjects()%></li>
+						<li><%=devForTable.getSkills()%></li>
+					</ul>
+					<hr>
+					<%
+						}
+					%>
+					<%
+						}
+					%>
 
-						<hr>
-						<div id="success"></div>
-						<div class="row">
-							<div class="form-group col-xs-12">
-								<button id="subBtn" type="submit" class="btn btn-default">Submit</button>
-							</div>
+					<div id="success"></div>
+					<div class="row">
+						<div class="form-group col-xs-12">
+							<button id="subBtn" type="submit" class="btn btn-default">Submit</button>
 						</div>
-					</form>
-				</div>
+					</div>
+				</form>
 			</div>
 		</div>
+	</div>
 	</article>
 
 	<hr>
 
 	<!-- Footer -->
 	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					<ul class="list-inline text-center">
-						<li><a href="https://github.com/GC-HandleIT/HandleIt"
-							target="_blank"> <span class="fa-stack fa-lg"> <i
-									class="fa fa-circle fa-stack-2x"></i> <i
-									class="fa fa-github fa-stack-1x fa-inverse"></i>
-							</span>
-						</a></li>
-					</ul>
-					<p class="copyright text-muted">Copyright &copy; The HandleIT
-						Project 2016</p>
-				</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<ul class="list-inline text-center">
+					<li><a href="https://github.com/GC-HandleIT/HandleIt"
+						target="_blank"> <span class="fa-stack fa-lg"> <i
+								class="fa fa-circle fa-stack-2x"></i> <i
+								class="fa fa-github fa-stack-1x fa-inverse"></i>
+						</span>
+					</a></li>
+				</ul>
+				<p class="copyright text-muted">Copyright &copy; The HandleIT
+					Project 2016</p>
 			</div>
 		</div>
+	</div>
 	</footer>
 
 	<!-- jQuery -->

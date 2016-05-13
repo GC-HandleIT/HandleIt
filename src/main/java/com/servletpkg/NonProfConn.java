@@ -109,7 +109,7 @@ public class NonProfConn {
 		}
 	}
 
-	public static NonProfObj npLoginSearch(NonProfObj loginNP) {
+	public static boolean npLoginSearch(NonProfObj loginNP) {
 
 		String email = loginNP.getEmailAddress();
 		String password = loginNP.getPassword();
@@ -136,14 +136,14 @@ public class NonProfConn {
 					npForLogin.setProjectType(resSet.getString("project_type"));
 					npForLogin.setProjectDescription(resSet.getString("project_description"));
 
-				return npForLogin;
+				return true;
 			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
-		return null;
+		return false;
 	}
 
 	private static String insertToTable = "INSERT INTO `handleitdb`.`nonprofittable` "
