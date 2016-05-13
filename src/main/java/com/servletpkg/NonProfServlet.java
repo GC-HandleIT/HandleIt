@@ -52,17 +52,23 @@ public class NonProfServlet extends HttpServlet {
 				if (NonProfConn.passOrFail) {
 					response.sendRedirect("writenptable.jsp");
 					System.out.println("Np has been added to the db.");
-
-				} // else
+				}
 			}
+
 		} catch (NullPointerException e) {
-			
+
 			boolean foundANP;
-			
+
 			String searchByProjects = request.getParameter("project_type");
 			String searchByFocus = request.getParameter("focus");
-			
+
 			System.out.println(searchByProjects + " & " + searchByFocus);
+
+			foundANP = NonProfConn.searchForANP(searchByProjects, searchByFocus);
+
+			if (foundANP) {
+				response.sendRedirect("readnptable.jsp");
+			}
 		}
 	}
 }

@@ -12,8 +12,8 @@ import com.HandleIT.*;
 
 public class NonProfConn {
 
-	public static ArrayList<NonProfObj> NPObjForConn = new ArrayList<>();
 	static boolean passOrFail = false;
+	public static ArrayList<NonProfObj> soughtNps = new ArrayList<>();
 
 	static final String JBDC_DRIVER = "com.mysql.jdbc.Driver";
 	static final String DB_URL = "jdbc:mysql://localhost:3306/?user=root?autoReconnect=true&useSSL=false";
@@ -45,16 +45,15 @@ public class NonProfConn {
 		}
 	}
 
-	public static NonProfObj searchForANP(String aColumn, String aValue) {
-		String searchThisColumn = null;
-		String searchThisValue = null;
+	public static boolean searchForANP(String projectType, String focus) {
+
+		String formatStmt = whichStmt(projectType, focus);
 
 		try {
 
 			initConnToDatabase();
 			stmt = conn.createStatement();
-			resSet = stmt.executeQuery("SELECT * FROM `handleitdb`.`nonprofittable` WHERE `" + searchThisColumn
-					+ "` LIKE '" + searchThisValue + "';");
+			resSet = stmt.executeQuery(formatStmt);
 
 			while (resSet.next()) {
 
@@ -71,15 +70,17 @@ public class NonProfConn {
 				npForDev.setProjectType(resSet.getString("project_type"));
 				npForDev.setProjectDescription(resSet.getString("project_description"));
 
-				return npForDev;
+				soughtNps.add(npForDev);
 			}
+
+			return true;
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
 
-		return null;
+		return false;
 
 	}
 
@@ -125,16 +126,16 @@ public class NonProfConn {
 
 				NonProfObj npForLogin = new NonProfObj();
 
-					npForLogin.setId(resSet.getString("id"));
-					npForLogin.setName(resSet.getString("name"));
-					npForLogin.setPassword(resSet.getString("password"));
-					npForLogin.setLink(resSet.getString("link"));
-					npForLogin.setContactPerson(resSet.getString("contact_person"));
-					npForLogin.setEmailAddress(resSet.getString("email_address"));
-					npForLogin.setFocus(resSet.getString("focus"));
-					npForLogin.setLocation(resSet.getString("location"));
-					npForLogin.setProjectType(resSet.getString("project_type"));
-					npForLogin.setProjectDescription(resSet.getString("project_description"));
+				npForLogin.setId(resSet.getString("id"));
+				npForLogin.setName(resSet.getString("name"));
+				npForLogin.setPassword(resSet.getString("password"));
+				npForLogin.setLink(resSet.getString("link"));
+				npForLogin.setContactPerson(resSet.getString("contact_person"));
+				npForLogin.setEmailAddress(resSet.getString("email_address"));
+				npForLogin.setFocus(resSet.getString("focus"));
+				npForLogin.setLocation(resSet.getString("location"));
+				npForLogin.setProjectType(resSet.getString("project_type"));
+				npForLogin.setProjectDescription(resSet.getString("project_description"));
 
 				return true;
 			}
@@ -150,4 +151,19 @@ public class NonProfConn {
 			+ "(`id`, `name`, `password`, `link`, `contact_person`, `email_address`, `focus`, `location`, `project_type`, `project_description`)"
 			+ " VALUES " + "(?,?,?,?,?,?,?,?,?,?)";
 
+	private static String whichStmt(String projectType, String focus) {
+
+		if (projectType.equalsIgnoreCase("*") && focus.equalsIgnoreCase("*")) {
+			return "SELECT * FROM handleitdb.nonprofittable;";
+
+		} else if (projectType.equalsIgnoreCase("*")) {
+			return "SELECT * FROM handleitdb.devtable WHERE `skills` LIKE '" + focus + ";";
+
+		} else if (focus.equalsIgnoreCase("*")) {
+			return "SELECT * FROM handleitdb.devtable WHERE `projects` LIKE '" + projectType + ";";
+		}
+		return "SELECT * FROM handleitdb.devtable WHERE `projects` LIKE '" + projectType + "' AND `skills` LIKE '"
+				+ projectType + ";";
+
+	}
 }

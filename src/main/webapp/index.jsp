@@ -54,26 +54,30 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<!-- <li><a href="index.jsp">Home</a></li> -->
-				<li style="display: inline-block;" class="dropdown"><a
-					href="javascript:void(0)" class="dropbtnlog"
-					onclick="dropFunctionLog()">Login</a>
-					<div style="display: none; position: absolute;"
-						class="dropdown-content" id="loginDropdown">
-						<a href="devlogin.jsp">Developer</a> <a href="nplogin.jsp">NonProfit</a>
-					</div></li>
+
 				<li style="display: inline-block;" class="dropdown"><a
 					href="javascript:void(0)" class="dropbtn"
 					onclick="dropFunctionSign()">Sign-Up</a>
-					<div style="display: none; position: absolute;"
-						class="dropdown-content" id="signDropdown">
+					<div style="display: none;" class="dropdown-content"
+						id="signDropdown">
 						<a href="writedevtable.jsp">Developer</a> <a
 							href="writenptable.jsp">NonProfit</a>
 					</div></li>
+
+				<li style="display: inline-block;" class="dropdown"><a
+					href="javascript:void(0)" class="dropbtn"
+					onclick="dropFunctionLog()">Login</a>
+					<div style="display: none;" class="dropdown-content"
+						id="loginDropdown">
+						<a href="devlogin.jsp">Developer</a> <a href="nplogin.jsp">NonProfit</a>
+					</div></li>
+
+
 				<li><a href="contact.jsp">Contact</a></li>
 			</ul>
 		</div>
-		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container --> </nav>
 
@@ -176,14 +180,44 @@
 			document.getElementById("signDropdown").classList.toggle("show");
 		}
 
-		window.onclick = function(e) {
+		window.onclick = function(event) {
 			if (!e.target.matches('.dropbtnlog')) {
 
 				var dropdowns = document
-						.getElementByClassName("dropdown-content");
+						.getElementsByClassName("dropdown-content");
 				for (var i = 0; i < dropdowns.length; i++) {
 					var openDropdown = dropdowns[i];
 
+					if (openDropdown.classList.contains('show')) {
+						openDropdown.classList.remove('show');
+					}
+				}
+			}
+		}
+
+		window.onclick = function(event) {
+			if (!event.target.matches('.dropbtn')) {
+
+				var dropdowns = document
+						.getElementsByClassName("dropdown-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+					var openDropdown = dropdowns[i];
+					if (openDropdown.classList.contains('show')) {
+						openDropdown.classList.remove('show');
+					}
+				}
+			}
+		}
+
+		window.onscroll = function(event) {
+			if (!event.target.matches('.dropbtn')) {
+
+				var dropdowns = document
+						.getElementsByClassName("dropdown-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+					var openDropdown = dropdowns[i];
 					if (openDropdown.classList.contains('show')) {
 						openDropdown.classList.remove('show');
 					}

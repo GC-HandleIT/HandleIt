@@ -13,7 +13,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Search a Dev</title>
+<title>The Developers</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -96,24 +96,17 @@
 						<li><%=devForTable.getFirstName()%></li>
 						<li><%=devForTable.getEmailAddress()%></li>
 						<li><%=devForTable.getLocation()%></li>
-						<li><a href="<%=devForTable.getProfileUrl()%>" target="_blank">Linked</a></li>
+						<li><a href="<%=devForTable.getProfileUrl()%>"
+							target="_blank">LinkedIn</a></li>
 						<li><%=devForTable.getProjects()%></li>
 						<li><%=devForTable.getSkills()%></li>
 					</ul>
 					<hr>
 					<%
 						}
-					%>
-					<%
 						}
 					%>
 
-					<div id="success"></div>
-					<div class="row">
-						<div class="form-group col-xs-12">
-							<button id="subBtn" type="submit" class="btn btn-default">Submit</button>
-						</div>
-					</div>
 				</form>
 			</div>
 		</div>

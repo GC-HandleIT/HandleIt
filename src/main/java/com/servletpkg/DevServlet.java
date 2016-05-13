@@ -57,7 +57,7 @@ public class DevServlet extends HttpServlet {
 			}
 
 		} catch (NullPointerException e) {
-			
+
 			boolean foundADev;
 
 			String searchByProjects = request.getParameter("project_type");
@@ -71,8 +71,6 @@ public class DevServlet extends HttpServlet {
 			if (foundADev) {
 				response.sendRedirect("readdevtable.jsp");
 			}
-			
 		}
-
 	}
 }
