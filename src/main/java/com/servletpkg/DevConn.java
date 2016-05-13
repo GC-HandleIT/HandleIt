@@ -12,7 +12,6 @@ import com.HandleIT.DevObj;
 
 public class DevConn {
 
-	public static ArrayList<DevObj> DevObjForConn = new ArrayList<>();
 	static boolean passOrFail = false;
 
 	static final String JBDC_DRIVER = "com.mysql.jdbc.Driver";
@@ -45,34 +44,36 @@ public class DevConn {
 		}
 	}
 
-	public static DevObj searchForADev(String aColumn, String aValue) {
-		String searchThisColumn = null;
-		String searchThisValue = null;
+	public static ArrayList<DevObj> searchForADev(String projectType, String skills) {
+
+		ArrayList<DevObj> soughtDevs = new ArrayList<>();
 
 		try {
 
 			initConnToDatabase();
 			stmt = conn.createStatement();
-			resSet = stmt.executeQuery("SELECT * FROM handleitdb.devtable WHERE `" + searchThisColumn + "` LIKE '"
-					+ searchThisValue + "';");
+			resSet = stmt.executeQuery("SELECT * FROM handleitdb.devtable WHERE `projects` LIKE '" + projectType
+					+ "' AND `skills` LIKE '" + projectType + ";");
 
 			while (resSet.next()) {
 
 				DevObj devForNP = new DevObj();
 
-				devForNP.setId(resSet.getString("`id`"));
-				devForNP.setFirstName(resSet.getString("`first_name`"));
-				devForNP.setLastName(resSet.getString("`last_name`"));
-				devForNP.setPassword(resSet.getString("`password`"));
-				devForNP.setEmailAddress(resSet.getString("`email_address`"));
-				devForNP.setLocation(resSet.getString("`location`"));
-				devForNP.setPicUrl(resSet.getString("`pic_url`"));
-				devForNP.setProfileUrl(resSet.getString("`profile_url`"));
-				devForNP.setProjects(resSet.getString("`projects`"));
-				devForNP.setSkills(resSet.getString("`skills`"));
+				devForNP.setId(resSet.getString("id"));
+				devForNP.setFirstName(resSet.getString("first_name"));
+				devForNP.setLastName(resSet.getString("last_name"));
+				devForNP.setPassword(resSet.getString("password"));
+				devForNP.setEmailAddress(resSet.getString("email_address"));
+				devForNP.setLocation(resSet.getString("location"));
+				devForNP.setPicUrl(resSet.getString("pic_url"));
+				devForNP.setProfileUrl(resSet.getString("profile_url"));
+				devForNP.setProjects(resSet.getString("projects"));
+				devForNP.setSkills(resSet.getString("skills"));
 
-				return devForNP;
+				soughtDevs.add(devForNP);
 			}
+
+			return soughtDevs;
 
 		} catch (SQLException e) {
 			e.printStackTrace();

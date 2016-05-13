@@ -1,6 +1,8 @@
 package com.servletpkg;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -56,14 +58,17 @@ public class DevServlet extends HttpServlet {
 			}
 
 		} catch (NullPointerException e) {
-			
+
+			ArrayList<DevObj> devs = new ArrayList<>();
+
 			String searchByProjects = request.getParameter("project_type");
 			String searchBySkills = request.getParameter("skill_sets");
 
 			System.out.println(searchByProjects);
 			System.out.println(searchBySkills);
-			
-			response.sendRedirect("readdevtable.html");
+
+			devs = DevConn.searchForADev(searchByProjects, searchBySkills);
+
 			
 			
 		}
