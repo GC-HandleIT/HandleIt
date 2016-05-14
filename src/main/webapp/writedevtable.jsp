@@ -89,13 +89,7 @@
 					be added to the database</p>
 				<form action="DevServlet" method="post">
 					<div class="row control-group">
-						<div
-							class="form-group col-xs-12 floating-label-form-group controls">
-							<label>ID</label> <input type="text" class="form-control"
-								placeholder="ID" name="form-id" id="id" required
-								data-validation-required-message="Please enter the ID.">
-							<p class="help-block text-danger"></p>
-						</div>
+						
 					</div>
 					<div class="row control-group">
 						<!-- 2 -->
@@ -139,6 +133,7 @@
 								name="form-email_address" id="email_address" required
 								data-validation-required-message="Please enter the email address.">
 							<p class="help-block text-danger"></p>
+							<div id='status'></div>
 						</div>
 					</div>
 					<div class="row control-group">
@@ -236,31 +231,59 @@
 	<script src="js/clean-blog.min.js"></script>
 
 
+	<script src="js/mailgun_validator.js"></script>
+
 	<script>
-		document.getElementById("dbEF").onclick = function() {
-			password()
-		};
+	 $(function() {
 
-		function password() {
-			var testV = 1;
-			var pass1 = prompt('Please Enter Your Password', ' ');
-			while (testV < 3) {
-				if (!pass1)
+	        // capture all enter and do nothing
+	        $("#email_address").keypress(function(e) {
+	          if(e.which == 13) {
+	            $("#email_address").trigger('focusout');
+	            return false;
+	          }
+	        });
 
-					document
-				if (pass1.toLowerCase() == "letmein") {
-					document.getElementById("subBtn").disabled = false;
-					break;
-				}
-				testV += 1;
-				var pass1 = prompt(
-						'Access Denied - Password Incorrect, Please Try Again.',
-						'Password');
-			}
-			if (pass1.toLowerCase() != "password" & testV == 3)
-				document.getElementById("subBtn").disabled = true;
-			return " ";
-		}
+	        // capture clicks on validate and do nothing
+	        $("#subBtn").click(function() {
+	          return false;
+	        });
+
+	        // attach jquery plugin to validate address
+	        $("#email_address").mailgun_validator({
+	          api_key: 'pubkey-83a6-sl6j2m3daneyobi87b3-ksx3q29',
+	      	   success: validation_success,
+	          error: validation_error,
+	        });
+
+	      });
+     // if email successfull validated
+     function validation_success(data) {
+       $('#status').html(get_suggestion_str(data['is_valid'], data['did_you_mean']));
+     }
+
+
+
+     // if email is invalid
+     function validation_error(error_message) {
+       $('#status').html(error_message);
+     }
+
+     // suggest a valid email
+     function get_suggestion_str(is_valid, alternate) {
+       if (is_valid) {
+         var result = '<span class="success">Address is valid.</span>';
+         if (alternate) {
+           result += '<span class="warning"> (Though did you mean <em>' + alternate + '</em>?)</span>';
+         }
+         return result
+       } else if (alternate) {
+         return '<span class="warning">Did you mean <em>' +  alternate + '</em>?</span>';
+       } else {
+         return '<span class="error">Address is invalid.</span>';
+       }
+     }
+	
 	</script>
 	
 	
