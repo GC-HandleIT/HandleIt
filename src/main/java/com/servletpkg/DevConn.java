@@ -14,6 +14,7 @@ public class DevConn {
 
 	static boolean passOrFail = false;
 	public static ArrayList<DevObj> soughtDevs = new ArrayList<>();
+	public static DevObj whoIsLogingIn = new DevObj();
 
 	static final String JBDC_DRIVER = "com.mysql.jdbc.Driver";
 	static final String DB_URL = "jdbc:mysql://localhost:3306/?user=root?autoReconnect=true&useSSL=false";
@@ -137,6 +138,8 @@ public class DevConn {
 				devForLogin.setProfileUrl(resSet.getString("public_profile_url"));
 				devForLogin.setProjects(resSet.getString("projects"));
 				devForLogin.setSkills(resSet.getString("skills"));
+
+				whoIsLogingIn = devForLogin;
 
 				return true;
 			}

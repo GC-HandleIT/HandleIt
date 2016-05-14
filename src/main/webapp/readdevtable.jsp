@@ -107,6 +107,10 @@
 						}
 					%>
 
+					<%
+						DevConn.soughtDevs.clear();
+					%>
+
 				</form>
 			</div>
 		</div>

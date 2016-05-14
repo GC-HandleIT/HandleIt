@@ -51,7 +51,7 @@ public class DevServlet extends HttpServlet {
 				DevConn.writeToDevTable(devToAddToDB);
 
 				if (DevConn.passOrFail) {
-					response.sendRedirect("writedevtable.html");
+					response.sendRedirect("devlogin.jsp");
 					System.out.println("Dev has been added to the db.");
 				}
 			}

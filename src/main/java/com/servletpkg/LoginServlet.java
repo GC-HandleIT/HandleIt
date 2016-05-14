@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet {
 				boolean lostOrFound = DevConn.devLoginSearch(loginDev);
 
 				if (lostOrFound) {
-					response.sendRedirect("searchnptable.jsp");
+					response.sendRedirect("developerportal.jsp");
 					System.out.println("Dev was found and redirected to search.");
 
 				} else {
@@ -61,7 +61,7 @@ public class LoginServlet extends HttpServlet {
 				boolean lostOrFound = NonProfConn.npLoginSearch(loginNP);
 
 				if (lostOrFound) {
-					response.sendRedirect("searchdevtable.jsp");
+					response.sendRedirect("nonprofitportal.jsp");
 					System.out.println("Success, redirected to search.");
 
 				} else {
@@ -83,7 +83,7 @@ public class LoginServlet extends HttpServlet {
 
 					NonProfConn.npLoginSearch(loginNP);
 
-					response.sendRedirect("searchdevtable.jsp");
+					response.sendRedirect("nonprofitportal.jsp");
 					System.out.println("NP was found and redirected.");
 				}
 

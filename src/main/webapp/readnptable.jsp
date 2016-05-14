@@ -113,6 +113,9 @@
 						}
 					%>
 
+					<%
+						NonProfConn.soughtNps.clear();
+					%>
 					<hr>
 
 				</form>

@@ -14,6 +14,7 @@ public class NonProfConn {
 
 	static boolean passOrFail = false;
 	public static ArrayList<NonProfObj> soughtNps = new ArrayList<>();
+	public static NonProfObj whoIsLogingIn = new NonProfObj();
 
 	static final String JBDC_DRIVER = "com.mysql.jdbc.Driver";
 	static final String DB_URL = "jdbc:mysql://localhost:3306/?user=root?autoReconnect=true&useSSL=false";
@@ -136,6 +137,8 @@ public class NonProfConn {
 				npForLogin.setLocation(resSet.getString("location"));
 				npForLogin.setProjectType(resSet.getString("project_type"));
 				npForLogin.setProjectDescription(resSet.getString("project_description"));
+
+				whoIsLogingIn = npForLogin;
 
 				return true;
 			}
