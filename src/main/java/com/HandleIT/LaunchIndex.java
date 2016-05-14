@@ -11,17 +11,17 @@ public class LaunchIndex {
 
 		try {
 			Desktop userDesktop = java.awt.Desktop.getDesktop();
-			URI url = new URI("http://localhost:8080/HandleITApp/index.html");
+			URI url = new URI("http://localhost:8080/HandleITApp/index.jsp");
 			userDesktop.browse(url);
-			
-		} catch(IOException e) {
+
+		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
-			
-		} catch(URISyntaxException ex) {
+
+		} catch (URISyntaxException ex) {
 			ex.printStackTrace();
 			System.out.println(ex.getLocalizedMessage());
 		}
-		
+
 	}
 }

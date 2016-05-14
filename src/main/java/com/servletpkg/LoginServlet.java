@@ -44,11 +44,28 @@ public class LoginServlet extends HttpServlet {
 				boolean lostOrFound = DevConn.devLoginSearch(loginDev);
 
 				if (lostOrFound) {
-					response.sendRedirect("searchnptable.html");
+					response.sendRedirect("searchnptable.jsp");
 					System.out.println("Dev was found and redirected to search.");
 
 				} else {
-					response.sendRedirect("index.html");
+					response.sendRedirect("index.jsp");
+					System.out.println("Invalid user, please try again.");
+				}
+
+			} else {
+				loginNP.setEmailAddress(request.getParameter("form-np_login_email"));
+				loginNP.setPassword(request.getParameter("form-dev_login_password"));
+
+				System.out.println("Collected NP to login.");
+
+				boolean lostOrFound = NonProfConn.npLoginSearch(loginNP);
+
+				if (lostOrFound) {
+					response.sendRedirect("searchdevtable.jsp");
+					System.out.println("Success, redirected to search.");
+
+				} else {
+					response.sendRedirect("index.jsp");
 					System.out.println("Invalid user, please try again.");
 				}
 			}
@@ -66,12 +83,12 @@ public class LoginServlet extends HttpServlet {
 
 					NonProfConn.npLoginSearch(loginNP);
 
-					response.sendRedirect("searchdevtabe.html");
+					response.sendRedirect("searchdevtable.jsp");
 					System.out.println("NP was found and redirected.");
 				}
 
 			} catch (NullPointerException ex) {
-				response.sendRedirect("index.html");
+				response.sendRedirect("index.jsp");
 				System.out.println("Something went quite wrong");
 			}
 

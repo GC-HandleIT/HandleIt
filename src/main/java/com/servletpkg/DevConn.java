@@ -13,6 +13,7 @@ import com.HandleIT.DevObj;
 public class DevConn {
 
 	static boolean passOrFail = false;
+	public static ArrayList<DevObj> soughtDevs = new ArrayList<>();
 
 	static final String JBDC_DRIVER = "com.mysql.jdbc.Driver";
 	static final String DB_URL = "jdbc:mysql://localhost:3306/?user=root?autoReconnect=true&useSSL=false";
@@ -44,16 +45,15 @@ public class DevConn {
 		}
 	}
 
-	public static ArrayList<DevObj> searchForADev(String projectType, String skills) {
+	public static boolean searchForADev(String projectType, String skills) {
 
-		ArrayList<DevObj> soughtDevs = new ArrayList<>();
+		String formatStmt = whichStmt(projectType, skills);
 
 		try {
 
 			initConnToDatabase();
 			stmt = conn.createStatement();
-			resSet = stmt.executeQuery("SELECT * FROM handleitdb.devtable WHERE `projects` LIKE '" + projectType
-					+ "' AND `skills` LIKE '" + projectType + ";");
+			resSet = stmt.executeQuery(formatStmt);
 
 			while (resSet.next()) {
 
@@ -65,22 +65,22 @@ public class DevConn {
 				devForNP.setPassword(resSet.getString("password"));
 				devForNP.setEmailAddress(resSet.getString("email_address"));
 				devForNP.setLocation(resSet.getString("location"));
-				devForNP.setPicUrl(resSet.getString("pic_url"));
-				devForNP.setProfileUrl(resSet.getString("profile_url"));
+				devForNP.setPicUrl(resSet.getString("picture_url"));
+				devForNP.setProfileUrl(resSet.getString("public_profile_url"));
 				devForNP.setProjects(resSet.getString("projects"));
 				devForNP.setSkills(resSet.getString("skills"));
 
 				soughtDevs.add(devForNP);
 			}
 
-			return soughtDevs;
+			return true;
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
 
-		return null;
+		return false;
 
 	}
 
@@ -151,5 +151,21 @@ public class DevConn {
 	private static String insertToTable = "INSERT INTO `handleitdb`.`devtable` "
 			+ "(`id`, `first_name`, `last_name`, `password`, `email_address`, `location`, `picture_url`, `public_profile_url`, `projects`, `skills`)"
 			+ " VALUES " + "(?,?,?,?,?,?,?,?,?,?)";
+
+	private static String whichStmt(String projectType, String skills) {
+
+		if (projectType.equalsIgnoreCase("*") && skills.equalsIgnoreCase("*")) {
+			return "SELECT * FROM handleitdb.devtable;";
+
+		} else if (projectType.equalsIgnoreCase("*")) {
+			return "SELECT * FROM handleitdb.devtable WHERE `skills` LIKE '" + skills + ";";
+
+		} else if (skills.equalsIgnoreCase("*")) {
+			return "SELECT * FROM handleitdb.devtable WHERE `projects` LIKE '" + projectType + ";";
+		}
+		return "SELECT * FROM handleitdb.devtable WHERE `projects` LIKE '" + projectType + "' AND `skills` LIKE '"
+				+ projectType + ";";
+
+	}
 
 }
