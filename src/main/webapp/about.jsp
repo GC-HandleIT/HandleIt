@@ -45,17 +45,17 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.html">HandleIT</a>
+			<a class="navbar-brand" href="index.jsp">HandleIT</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<!-- <li><a href="index.html">Home</a></li> -->
-				<!-- <li><a href="login.html">Login</a></li>
-					<li><a href="sign-up.html">Sign-Up</a></li> -->
-				<li><a href="contact.html">Contact</a></li>
+				<!-- <li><a href="index.jsp">Home</a></li> -->
+				<!-- <li><a href="login.jsp">Login</a></li>
+					<li><a href="sign-up.jsp">Sign-Up</a></li> -->
+				<li><a href="contact.jsp">Contact</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
@@ -93,7 +93,7 @@
 					continues to develop and move forward and the organizations that
 					are doing the most good in our world are getting left behind. I
 					hope that through HandleIT we can help bridge some of those gaps.</p>
-				<a href="https://www.linkedin.com/in/rolandjessica" target="_blank">LinkdIn</a>
+				<a href="https://www.linkedin.com/in/rolandjessica" target="_blank">LinkedIn</a>
 				<a href="https://github.com/jaroland" target="_blank">GitHub</a>
 				<p></p>
 			</div>
@@ -105,8 +105,16 @@
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 				<h2>Erin Bergman</h2>
 				<h4>Co-Founder</h4>
+				<p>I am currently a student in the Grand Circus Java Boot Camp.
+					Being a non-traditional developer means I am constantly looking for
+					places to grow my skills and my portfolio. I saw an opportunity in
+					HandleIT to help myself grow as a developer, but even more to help
+					other fresh developers grow as well. The opportunity to help young
+					NonProfits is the best part in all of this. While the nonprofit may
+					think nothing of giving to others I think giving to them is the one
+					of the most rewarding experiences.</p>
 				<a href="https://www.linkedin.com/in/erinbergman" target="_blank">LinkedIn</a>
-				<a href="https://github.com/eebergman" target="_blank">Github</a>
+				<a href="https://github.com/eebergman" target="_blank">GitHub</a>
 				<p></p>
 			</div>
 		</div>
