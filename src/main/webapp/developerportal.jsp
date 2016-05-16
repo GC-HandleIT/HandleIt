@@ -95,7 +95,8 @@
 				</h2>
 
 				<p>
-					Click <a href="searchnptable.jsp">here</a> to search for a NonProfit.
+					Click <a href="searchnptable.jsp">here</a> to search for a
+					NonProfit.
 				</p>
 
 				<hr>
