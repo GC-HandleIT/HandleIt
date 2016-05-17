@@ -266,10 +266,17 @@
 				}
 			});
 
+
+	        // capture clicks on validate and do nothing
+	        $("#email_address").blur(function() {
+	          return false;
+	        });
+
 			// capture clicks on validate and do nothing
-			$("#subBtn").click(function() {
+			$("#email_address").blur(function() {
 				return true;
 			});
+
 
 			// attach jquery plugin to validate address
 			$("#email_address").mailgun_validator({

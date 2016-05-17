@@ -234,56 +234,59 @@
 	<script src="js/mailgun_validator.js"></script>
 
 	<script>
-		$(function() {
 
-			// capture all enter and do nothing
-			$('#email').keypress(function(e) {
-				if (e.which == 13) {
-					$('#email').trigger('focusout');
-					return false;
-				}
-			});
+	 $(function() {
 
-			// capture clicks on validate and do nothing
-			$("#subBtn").click(function() {
-				return true;
-			});
+	        // capture all enter and do nothing
+	        $('#email').keypress(function(e) {
+	          if(e.which == 13) {
+	            $('#email').trigger('focusout');
+	            return false;
+	          }
+	        });
 
-			// attach jquery plugin to validate address
-			$('#email').mailgun_validator({
-				api_key : 'pubkey-83a6-sl6j2m3daneyobi87b3-ksx3q29',
-				success : validation_success,
-				error : validation_error,
-			});
+	        // capture clicks on validate and do nothing
+	        $('#email').blur(function() {
+	          return false;
+	        });
 
-		});
-		// if email successfull validated
-		function validation_success(data) {
-			$('#status').html(
-					get_suggestion_str(data['is_valid'], data['did_you_mean']));
-		}
+	        // attach jquery plugin to validate address
+	        $('#email').mailgun_validator({
+	          api_key: 'pubkey-83a6-sl6j2m3daneyobi87b3-ksx3q29',
+	      	   success: validation_success,
+	          error: validation_error,
+	        });
 
-		// if email is invalid
-		function validation_error(error_message) {
-			$('#status').html(error_message);
-		}
+	      });
+     // if email successfull validated
+     function validation_success(data) {
+       $('#status').html(get_suggestion_str(data['is_valid'], data['did_you_mean']));
+     }
 
-		// suggest a valid email
-		function get_suggestion_str(is_valid, alternate) {
-			if (is_valid) {
-				var result = '<span class="success">Address is valid.</span>';
-				if (alternate) {
-					result += '<span class="warning"> (Though did you mean <em>'
-							+ alternate + '</em>?)</span>';
-				}
-				return result
-			} else if (alternate) {
-				return '<span class="warning">Did you mean <em>' + alternate
-						+ '</em>?</span>';
-			} else {
-				return '<span class="error">Address is invalid.</span>';
-			}
-		}
+
+
+     // if email is invalid
+     function validation_error(error_message) {
+       $('#status').html(error_message);
+     }
+
+     // suggest a valid email
+     function get_suggestion_str(is_valid, alternate) {
+       if (is_valid) {
+         var result = '<span class="success">Address is valid.</span>';
+         if (alternate) {
+           result += '<span class="warning"> (Though did you mean <em>' + alternate + '</em>?)</span>';
+         }
+         return result
+       } else if (alternate) {
+         return '<span class="warning">Did you mean <em>' +  alternate + '</em>?</span>';
+       } else {
+         return '<span class="error">Address is invalid.</span>';
+       }
+     }
+	
+
+	
 	</script>
 
 
