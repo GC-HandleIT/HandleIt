@@ -244,7 +244,7 @@
 	        });
 
 	        // capture clicks on validate and do nothing
-	        $("#subBtn").click(function() {
+	        $('#email').blur(function() {
 	          return false;
 	        });
 

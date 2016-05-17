@@ -245,7 +245,7 @@
 	        });
 
 	        // capture clicks on validate and do nothing
-	        $("#subBtn").click(function() {
+	        $("#email_address").blur(function() {
 	          return false;
 	        });
 
