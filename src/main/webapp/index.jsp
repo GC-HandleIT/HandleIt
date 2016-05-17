@@ -106,9 +106,10 @@
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 				<div class="post-preview">
 					<h2 style="text-align: center;" class="post-title">What We Do</h2>
-					<p style= font-size:20px; class="post-subtitle">We bring non-profit organizations
-						and IT professionals together for collaboration on mutually
-						beneficial projects</h5>
+					<p style="font-size: 20px;" class="post-subtitle">We bring
+						non-profit organizations and IT professionals together for
+						collaboration on mutually beneficial projects
+					</h5>
 					<!-- <p class="post-meta">
 						Posted by <a href="#">Start Bootstrap</a> on September 24, 2014
 					</p> -->
@@ -117,21 +118,15 @@
 				<div class="post-preview">
 					<h2 style="text-align: center;" class="post-title">Why We Do
 						This</h2>
-					<p style= font-size:20px class="post-subtitle">As developers, we see a need in the
-						non-profit arena to lend our skills to organizations that help
-						causes we are passionate about while building our portfolio and
-						expanding our skill set. Many non-profits can not afford skilled
-						IT professionals to help them take their vision to the next level.
-						We help the non-profits handle their information technology needs
-						by pairing them with skilled professionals.</p>
-
-
-					<a href="userProfile.jsp">Profile</a>
-					<!-- <p class="post-meta">
-						Posted by <a href="#">Start Bootstrap</a> on August 24, 2014
-					</p> -->
+					<p style="font-size: 20px" class="post-subtitle">As developers,
+						we see a need in the non-profit arena to lend our skills to
+						organizations that help causes we are passionate about while
+						building our portfolio and expanding our skill set. Many
+						non-profits can not afford skilled IT professionals to help them
+						take their vision to the next level. We help the non-profits
+						handle their information technology needs by pairing them with
+						skilled professionals.</p>
 				</div>
-				<hr>
 				<!-- Pager -->
 				<!-- <ul class="pager">
 					<li class="next"><a href="#">Older Posts &rarr;</a></li>

@@ -28,11 +28,11 @@ public class NonProfServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String theID = request.getParameter("form-id");
+		String theContactPerson = request.getParameter("form-contact_person");
 
 		try {
 
-			if (!(theID.equals(null))) {
+			if (!(theContactPerson.equals(null))) {
 
 				npToAddToDB.setId(request.getParameter("form-id"));
 				npToAddToDB.setName(request.getParameter("form-name"));

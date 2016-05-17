@@ -29,11 +29,11 @@ public class DevServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String theID = request.getParameter("form-id");
+		String theFirstName = request.getParameter("form-first_name");
 
 		try {
 
-			if (!(theID.equals(null))) {
+			if (!(theFirstName.equals(null))) {
 
 				devToAddToDB.setId(request.getParameter("form-id"));
 				devToAddToDB.setFirstName(request.getParameter("form-first_name"));

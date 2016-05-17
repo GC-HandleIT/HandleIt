@@ -233,6 +233,7 @@
 	<script src="js/mailgun_validator.js"></script>
 
 	<script>
+
 	 $(function() {
 
 	        // capture all enter and do nothing
@@ -282,6 +283,8 @@
          return '<span class="error">Address is invalid.</span>';
        }
      }
+	
+
 	
 	</script>
 
