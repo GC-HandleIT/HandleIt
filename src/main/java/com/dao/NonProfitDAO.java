@@ -157,13 +157,13 @@ public class NonProfitDAO {
 			return "SELECT * FROM handleitdb.nonprofittable;";
 
 		} else if (projectType.equalsIgnoreCase("*")) {
-			return "SELECT * FROM handleitdb.devtable WHERE `skills` LIKE '" + focus + ";";
+			return "SELECT * FROM handleitdb.nonprofittable WHERE `focus` LIKE '%" + focus + "%';";
 
 		} else if (focus.equalsIgnoreCase("*")) {
-			return "SELECT * FROM handleitdb.devtable WHERE `projects` LIKE '" + projectType + ";";
+			return "SELECT * FROM handleitdb.nonprofittable WHERE `project_type` LIKE '%" + projectType + "%';";
 		}
-		return "SELECT * FROM handleitdb.devtable WHERE `projects` LIKE '" + projectType + "' AND `skills` LIKE '"
-				+ projectType + ";";
+		return "SELECT * FROM handleitdb.nonprofittable WHERE `focus` LIKE '%" + focus + "%' AND `project_type` LIKE '%"
+				+ projectType + "%';";
 
 	}
 }

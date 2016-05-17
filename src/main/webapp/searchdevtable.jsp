@@ -102,16 +102,20 @@
 
 						<td><select name="skill_sets">
 								<option value="*">All</option>
-								<option value=".net">.NET</option>
-								<option value="asp.net">ASP.NET</option>
-								<option value="c#">C#</option>
-								<option value="c++">C++</option>
-								<option value="html_css">HTML/ CSS</option>
-								<option value="java">Java</option>
-								<option value="javascript">JavaScript</option>
-								<option value="sql_databases">SQL Databases</option>
-								<option value="python">Python</option>
-								<option value="ruby">Ruby</option>
+								<option value=".Net">.NET</option>
+								<option value="AngularJS">AngularJS</option>
+								<option value="C">C</option>
+								<option value="C#">C#</option>
+								<option value="C++">C++</option>
+								<option value="HTML/CSS">HTML/CSS</option>
+								<option value="Java">Java</option>
+								<option value="Javascript">JavaScript</option>
+								<option value="Node.js">Node.js</option>
+								<option value="Objective C">Objective C</option>
+								<option value="PHP">PHP</option>
+								<option value="Python">Python</option>
+								<option value="Ruby">Ruby</option>
+								<option value="SQL">SQL</option>
 								<option value="Swift">Swift</option>
 						</select></td>
 					</table>

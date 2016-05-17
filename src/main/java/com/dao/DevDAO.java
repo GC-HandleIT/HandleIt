@@ -158,13 +158,13 @@ public class DevDAO {
 			return "SELECT * FROM handleitdb.devtable;";
 
 		} else if (projectType.equalsIgnoreCase("*")) {
-			return "SELECT * FROM handleitdb.devtable WHERE `skills` LIKE '" + skills + ";";
+			return "SELECT * FROM handleitdb.devtable WHERE `skills` LIKE '%" + skills + "%';";
 
 		} else if (skills.equalsIgnoreCase("*")) {
-			return "SELECT * FROM handleitdb.devtable WHERE `projects` LIKE '" + projectType + ";";
+			return "SELECT * FROM handleitdb.devtable WHERE `projects` LIKE '%" + projectType + "%';";
 		}
-		return "SELECT * FROM handleitdb.devtable WHERE `projects` LIKE '" + projectType + "' AND `skills` LIKE '"
-				+ projectType + ";";
+		return "SELECT * FROM handleitdb.devtable WHERE `projects` LIKE '%" + projectType + "%' AND `skills` LIKE '%"
+				+ skills + "%';";
 
 	}
 
