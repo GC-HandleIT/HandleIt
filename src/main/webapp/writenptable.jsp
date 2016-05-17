@@ -145,14 +145,6 @@
 						</div>
 					</div>
 					<div class="row control-group">
-						<!-- 7 -->
-						<div
-							class="form-group col-xs-12 floating-label-form-group controls">
-							<label>Focus</label> <input type="text" class="form-control"
-								placeholder="Focus" name="form-focus" id="focus">
-						</div>
-					</div>
-					<div class="row control-group">
 						<!-- 8 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
@@ -163,13 +155,42 @@
 						</div>
 					</div>
 					<div class="row control-group">
-						<!-- 9 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
-							<label>Project Type</label> <input type="text"
-								class="form-control" placeholder="Project Type"
-								name="form-project_type" id="project_type" required
-								data-validation-required-message="Please enter the project type.">
+							<label>Projects</label>
+							<div style="font-size: 1.5em; color: #808080;">
+								<p>Projects</p>
+								<input type="checkbox" name="project_type" value="*">All</input><br>
+								<input type="checkbox" name="project_type" value="Database">Database</input><br>
+								<input type="checkbox" name="project_type" value="Simple Website">Simple
+								Website</input><br> 
+								<input type="checkbox" name="project_type"
+									value="Web Application">Web Application</input><br> <input
+									type="checkbox" name="project_type" value="Android Application">Android
+								Application</input><br> <input type="checkbox" name="project_type"
+									value="IOS Application">IOS Application</input>
+							</div>
+						</div>
+					</div>
+					<div class="row control-group">
+						<!-- 7 -->
+						<div
+							class="form-group col-xs-12 floating-label-form-group controls">
+							<label>Projects</label>
+							<div style="font-size: 1.5em; color: #808080;">
+								<p>Projects</p>
+								<input type="checkbox" name="focus" value="*">All</input><br>
+								<input type="checkbox" name="focus" value="Animals">Animals</input><br>
+								<input type="checkbox" name="focus" value="Children">Children</input><br>
+								<input type="checkbox" name="focus" value="Environment">Environment</input><br>
+								<input type="checkbox" name="focus" value="Honelessness">Homelessness</input><br>
+								<input type="checkbox" name="focus" value="LGBTQIA">LGBTQIA</input><br>
+								<input type="checkbox" name="focus" value="Mental Health">Mental Health</input><br>
+								<input type="checkbox" name="focus" value="Science, Technology, Engineering, and Mathematics">Science, Technology, Engineering, and Mathematics</input><br>
+								<input type="checkbox" name="focus" value="Social Equality">Social Equality</input><br>
+								<input type="checkbox" name="focus" value="Women's Social Issues">Women's Social Issues</input><br>
+								<input type="checkbox" name="focus" value="Other">Other</input><br>
+							</div>
 						</div>
 					</div>
 					<div class="row control-group">
@@ -177,18 +198,17 @@
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
 							<label>Project
-							 Description</label> <input type="text"
-								class="form-control" placeholder="Project Description"
-								name="form-project_description" id="project_description"
+							 Description</label> <input type="text" class="form-control"
+								placeholder="Project Description" name="form-project_description" id="form-project_description"
 								required
-								data-validation-required-message="Please enter the project description.">
-							<p class="help-block text-danger"></p>
+								data-validation-required-message="Please enter the description of the project.">
+                            <p class="help-block text-danger"></p>
 						</div>
 						<br>
 						<div id="success"></div>
 						<div class="row">
 							<div class="form-group col-xs-12">
-
+								<br>
 								<button id="subBtn" type="submit" class="btn btn-default">Submit</button>
 							</div>
 						</div>

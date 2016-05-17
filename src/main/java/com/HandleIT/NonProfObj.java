@@ -2,7 +2,6 @@ package com.HandleIT;
 
 public class NonProfObj {
 
-	private String id;
 	private String name;
 	private String password;
 	private String link;
@@ -13,10 +12,9 @@ public class NonProfObj {
 	private String projectType;
 	private String projectDescription;
 
-	public NonProfObj(String id, String name, String password, String link, String contactPerson, String emailAddress,
+	public NonProfObj(String name, String password, String link, String contactPerson, String emailAddress,
 			String focus, String location, String projectType, String projectDescription) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.password = password;
 		this.link = link;
@@ -29,14 +27,6 @@ public class NonProfObj {
 	}
 
 	public NonProfObj() {
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 	public String getName() {

@@ -60,14 +60,13 @@ public class NonProfConn {
 
 				NonProfObj npForDev = new NonProfObj();
 
-				npForDev.setId(resSet.getString("id"));
 				npForDev.setName(resSet.getString("name"));
 				npForDev.setPassword(resSet.getString("password"));
 				npForDev.setLink(resSet.getString("link"));
 				npForDev.setContactPerson(resSet.getString("contact_person"));
 				npForDev.setEmailAddress(resSet.getString("email_address"));
-				npForDev.setFocus(resSet.getString("focus"));
 				npForDev.setLocation(resSet.getString("location"));
+				npForDev.setFocus(resSet.getString("focus"));
 				npForDev.setProjectType(resSet.getString("project_type"));
 				npForDev.setProjectDescription(resSet.getString("project_description"));
 
@@ -91,16 +90,15 @@ public class NonProfConn {
 			initConnToDatabase();
 			prepStmt = conn.prepareStatement(insertToTable);
 
-			prepStmt.setString(1, newNPObj.getId());
-			prepStmt.setString(2, newNPObj.getName());
-			prepStmt.setString(3, newNPObj.getPassword());
-			prepStmt.setString(4, newNPObj.getLink());
-			prepStmt.setString(5, newNPObj.getContactPerson());
-			prepStmt.setString(6, newNPObj.getEmailAddress());
+			prepStmt.setString(1, newNPObj.getName());
+			prepStmt.setString(2, newNPObj.getPassword());
+			prepStmt.setString(3, newNPObj.getLink());
+			prepStmt.setString(4, newNPObj.getContactPerson());
+			prepStmt.setString(5, newNPObj.getEmailAddress());
+			prepStmt.setString(6, newNPObj.getLocation());
 			prepStmt.setString(7, newNPObj.getFocus());
-			prepStmt.setString(8, newNPObj.getLocation());
-			prepStmt.setString(9, newNPObj.getProjectType());
-			prepStmt.setString(10, newNPObj.getProjectDescription());
+			prepStmt.setString(8, newNPObj.getProjectType());
+			prepStmt.setString(9, newNPObj.getProjectDescription());
 
 			prepStmt.executeUpdate();
 			passOrFail = true;
@@ -127,14 +125,13 @@ public class NonProfConn {
 
 				NonProfObj npForLogin = new NonProfObj();
 
-				npForLogin.setId(resSet.getString("id"));
 				npForLogin.setName(resSet.getString("name"));
 				npForLogin.setPassword(resSet.getString("password"));
 				npForLogin.setLink(resSet.getString("link"));
 				npForLogin.setContactPerson(resSet.getString("contact_person"));
 				npForLogin.setEmailAddress(resSet.getString("email_address"));
-				npForLogin.setFocus(resSet.getString("focus"));
 				npForLogin.setLocation(resSet.getString("location"));
+				npForLogin.setFocus(resSet.getString("focus"));
 				npForLogin.setProjectType(resSet.getString("project_type"));
 				npForLogin.setProjectDescription(resSet.getString("project_description"));
 
@@ -151,8 +148,8 @@ public class NonProfConn {
 	}
 
 	private static String insertToTable = "INSERT INTO `handleitdb`.`nonprofittable` "
-			+ "(`id`, `name`, `password`, `link`, `contact_person`, `email_address`, `focus`, `location`, `project_type`, `project_description`)"
-			+ " VALUES " + "(?,?,?,?,?,?,?,?,?,?)";
+			+ "(`name`, `password`, `link`, `contact_person`, `email_address`, `location`, `focus`, `project_type`, `project_description`)"
+			+ " VALUES " + "(?,?,?,?,?,?,?,?,?)";
 
 	private static String whichStmt(String projectType, String focus) {
 

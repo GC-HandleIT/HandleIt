@@ -1,6 +1,8 @@
 package com.servletpkg;
 
 import java.io.IOException;
+import java.util.Arrays;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,18 +33,20 @@ public class NonProfServlet extends HttpServlet {
 		String theContactPerson = request.getParameter("form-contact_person");
 
 		try {
+			
+			String[] theFocus = request.getParameterValues("focus");
+			String[] theProjectType = request.getParameterValues("project_type");
 
 			if (!(theContactPerson.equals(null))) {
 
-				npToAddToDB.setId(request.getParameter("form-id"));
 				npToAddToDB.setName(request.getParameter("form-name"));
 				npToAddToDB.setPassword(request.getParameter("form-password"));
 				npToAddToDB.setLink(request.getParameter("form-link"));
 				npToAddToDB.setContactPerson(request.getParameter("form-contact_person"));
 				npToAddToDB.setEmailAddress(request.getParameter("form-email"));
-				npToAddToDB.setFocus(request.getParameter("form-focus"));
 				npToAddToDB.setLocation(request.getParameter("form-location"));
-				npToAddToDB.setProjectType(request.getParameter("form-project_type"));
+				npToAddToDB.setFocus(Arrays.toString(theFocus));
+				npToAddToDB.setProjectType(Arrays.toString(theProjectType));
 				npToAddToDB.setProjectDescription(request.getParameter("form-project_description"));
 
 				System.out.println("Collected a NP table entry.");
@@ -50,7 +54,7 @@ public class NonProfServlet extends HttpServlet {
 				NonProfConn.writeToNPTable(npToAddToDB);
 
 				if (NonProfConn.passOrFail) {
-					response.sendRedirect("writenptable.jsp");
+					response.sendRedirect("nplogin.jsp");
 					System.out.println("Np has been added to the db.");
 				}
 			}

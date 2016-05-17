@@ -109,7 +109,7 @@
 								<option value="children">Children</option>
 								<option value="environment">Environment</option>
 								<option value="homelessness">Homelessness</option>
-								<option value="lgbt">LGBT</option>
+								<option value="lgbt">LGBTQIA</option>
 								<option value="mental_health">Mental Health</option>
 								<option value="stem">Science, Technology, Engineering,
 									and Mathematics</option>
