@@ -2,7 +2,6 @@ package com.HandleIT;
 
 public class DevObj {
 
-	private String id;
 	private String firstName;
 	private String lastName;
 	private String password;
@@ -13,10 +12,9 @@ public class DevObj {
 	private String projects;
 	private String skills;
 
-	public DevObj(String id, String firstName, String lastName, String password, String emailAddress, String location,
+	public DevObj(String firstName, String lastName, String password, String emailAddress, String location,
 			String picUrl, String profileUrl, String projects, String skills) {
 		super();
-		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.password = password;
@@ -29,14 +27,6 @@ public class DevObj {
 	}
 
 	public DevObj() {
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 	public String getFirstName() {
@@ -99,16 +89,16 @@ public class DevObj {
 		return projects;
 	}
 
-	public void setProjects(String projects) {
-		this.projects = projects;
+	public void setProjects(String projectType) {
+		this.projects = projectType;
 	}
 
 	public String getSkills() {
 		return skills;
 	}
 
-	public void setSkills(String skills) {
-		this.skills = skills;
+	public void setSkills(String string) {
+		this.skills = string;
 	}
 
 }

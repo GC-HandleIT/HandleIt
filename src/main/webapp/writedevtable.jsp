@@ -83,8 +83,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-				<p>Please fill out each field, if left blank a null value will
-					be added to the database</p>
+				<p>Please fill out each field.</p>
 				<form action="DevServlet" method="post">
 					<div class="row control-group"></div>
 					<div class="row control-group">
@@ -166,27 +165,54 @@
 						<!-- 7 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
-							<label>Projects</label> <input type="text" class="form-control"
-								placeholder="Projects" name="form-projects" id="projects"
-								required
-								data-validation-required-message="Please enter any project types.">
+							<label>Projects</label>
+							<div style="font-size: 1.5em; color: #808080;">
+								<p>Projects</p>
+								<input type="checkbox" name="project_type" value="*">All</input><br>
+								<input type="checkbox" name="project_type" value="Databases">Databases</input><br>
+								<input type="checkbox" name="project_type" value="Simple Websites">Simple
+								Websites</input><br> 
+								<input type="checkbox" name="project_type"
+									value="Web Applications">Web Applications</input><br> <input
+									type="checkbox" name="project_type" value="Android Applications">Android
+								Applications</input><br> <input type="checkbox" name="project_type"
+									value="IOS Applications">IOS Applications</input>
+							</div>
 						</div>
 					</div>
 					<div class="row control-group">
-						<!-- 8 -->
+						<!-- 7 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
-							<label>Skills</label> <input type="text" class="form-control"
-								placeholder="Skills" name="form-skills" id="skills" required
-								data-validation-required-message="Please enter the skills.">
-							<p class="help-block text-danger"></p>
-						</div>
-						<br>
-						<div id="success"></div>
-						<div class="row">
-							<div class="form-group col-xs-12">
-								<button id="subBtn" type="submit" class="btn btn-default">Submit</button>
+							<label>Skills</label>
+							<div style="font-size: 1.5em; color: #808080;">
+								<p>Projects</p>
+								<input type="checkbox" name="skills" value="*">All</input><br>
+								<input type="checkbox" name="skills" value=".Net">.Net</input><br>
+								<input type="checkbox" name="skills" value="AngularJS">AngularJS</input><br>
+								<input type="checkbox" name="skills" value="C">C</input><br>
+								<input type="checkbox" name="skills" value="C#">C#</input><br>
+								<input type="checkbox" name="skills" value="C++">C++</input><br> 
+								<input
+									type="checkbox" name="skills" value="HTML/CSS">HTML/CSS</input><br>
+								<input type="checkbox" name="skills" value="Java">Java</input><br>
+								<input type="checkbox" name="skills" value="JavaScript">Javascript</input><br>
+								<input type="checkbox" name="skills" value="Node.js">Node.js</input><br>
+								<input type="checkbox" name="skills" value="Objective C">Objective
+								C</input><br> 
+								<input type="checkbox" name="skills" value="PHP">PHP</input><br>
+								<input type="checkbox" name="skills" value="Python">Python</input><br>
+								<input type="checkbox" name="skills" value="Ruby">Ruby</input><br>
+								<input type="checkbox" name="skills" value="SQL">SQL</input><br>
+								<input type="checkbox" name="skills" value="Swift">Swift</input><br>
 							</div>
+						</div>
+					</div>
+					<div id="success"></div>
+					<div class="row">
+						<div class="form-group col-xs-12">
+							<br>
+							<button id="subBtn" type="submit" class="btn btn-default">Submit</button>
 						</div>
 					</div>
 				</form>

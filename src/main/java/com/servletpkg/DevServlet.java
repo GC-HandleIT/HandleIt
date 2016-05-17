@@ -1,6 +1,7 @@
 package com.servletpkg;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,8 +35,10 @@ public class DevServlet extends HttpServlet {
 		try {
 
 			if (!(theFirstName.equals(null))) {
-
-				devToAddToDB.setId(request.getParameter("form-id"));
+				
+				String[] projectTypes = request.getParameterValues("project_type");
+				String[] skillTypes = request.getParameterValues("skills");
+				
 				devToAddToDB.setFirstName(request.getParameter("form-first_name"));
 				devToAddToDB.setLastName(request.getParameter("form-last_name"));
 				devToAddToDB.setPassword(request.getParameter("form-password"));
@@ -43,8 +46,8 @@ public class DevServlet extends HttpServlet {
 				devToAddToDB.setLocation(request.getParameter("form-location"));
 				devToAddToDB.setPicUrl(request.getParameter("form-picture_url"));
 				devToAddToDB.setProfileUrl(request.getParameter("form-profile_url"));
-				devToAddToDB.setProjects(request.getParameter("form-projects"));
-				devToAddToDB.setSkills(request.getParameter("form-skills"));
+				devToAddToDB.setProjects(Arrays.toString(projectTypes));
+				devToAddToDB.setSkills(Arrays.toString(skillTypes));
 
 				System.out.println("Collected a dev table entry.");
 

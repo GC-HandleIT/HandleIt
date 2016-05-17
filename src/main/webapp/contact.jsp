@@ -52,10 +52,6 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<!-- <li><a href="index.jsp">Home</a></li> -->
-				<li><a href="Login.jsp">Login</a></li>
-				<li><a href="sign-up.jsp">Sign-UP</a></li>
-				<li><a href="contact.jsp">Contact</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->

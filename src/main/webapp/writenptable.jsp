@@ -176,7 +176,8 @@
 						<!-- 10 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
-							<label>Project Description</label> <input type="text"
+							<label>Project
+							 Description</label> <input type="text"
 								class="form-control" placeholder="Project Description"
 								name="form-project_description" id="project_description"
 								required
