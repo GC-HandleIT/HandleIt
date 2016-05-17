@@ -1,4 +1,4 @@
-package com.servletpkg;
+package com.servlets;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -9,14 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.HandleIT.DevObj;
+import com.HandleIT.Developer;
+import com.dao.DevDAO;
 
 @WebServlet("/DevServlet")
 public class DevServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	DevObj devToAddToDB = new DevObj();
-	DevObj searchADev = new DevObj();
+	Developer devToAddToDB = new Developer();
+	Developer searchADev = new Developer();
 
 	public DevServlet() {
 		super();
@@ -51,14 +52,14 @@ public class DevServlet extends HttpServlet {
 
 				System.out.println("Collected a dev table entry.");
 
-				DevConn.writeToDevTable(devToAddToDB);
+				DevDAO.writeToDevTable(devToAddToDB);
 
-				if (DevConn.passOrFail) {
+				if (com.dao.DevDAO.passOrFail) {
 					response.sendRedirect("devlogin.jsp");
 					System.out.println("Dev has been added to the db.");
 				}
 			}
-
+ 
 		} catch (NullPointerException e) {
 
 			boolean foundADev;
@@ -69,7 +70,7 @@ public class DevServlet extends HttpServlet {
 			System.out.println(searchByProjects);
 			System.out.println(searchBySkills);
 
-			foundADev = DevConn.searchForADev(searchByProjects, searchBySkills);
+			foundADev = DevDAO.searchForADev(searchByProjects, searchBySkills);
 
 			if (foundADev) {
 				response.sendRedirect("readdevtable.jsp");

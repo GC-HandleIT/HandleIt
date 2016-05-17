@@ -162,12 +162,12 @@
 								<p>Projects</p>
 								<input type="checkbox" name="project_type" value="*">All</input><br>
 								<input type="checkbox" name="project_type" value="Database">Database</input><br>
-								<input type="checkbox" name="project_type" value="Simple Website">Simple
-								Website</input><br> 
 								<input type="checkbox" name="project_type"
-									value="Web Application">Web Application</input><br> <input
-									type="checkbox" name="project_type" value="Android Application">Android
+									value="Simple Website">Simple Website</input><br> <input
+									type="checkbox" name="project_type" value="Web Application">Web
 								Application</input><br> <input type="checkbox" name="project_type"
+									value="Android Application">Android Application</input><br>
+								<input type="checkbox" name="project_type"
 									value="IOS Application">IOS Application</input>
 							</div>
 						</div>
@@ -185,10 +185,13 @@
 								<input type="checkbox" name="focus" value="Environment">Environment</input><br>
 								<input type="checkbox" name="focus" value="Honelessness">Homelessness</input><br>
 								<input type="checkbox" name="focus" value="LGBTQIA">LGBTQIA</input><br>
-								<input type="checkbox" name="focus" value="Mental Health">Mental Health</input><br>
-								<input type="checkbox" name="focus" value="Science, Technology, Engineering, and Mathematics">Science, Technology, Engineering, and Mathematics</input><br>
-								<input type="checkbox" name="focus" value="Social Equality">Social Equality</input><br>
-								<input type="checkbox" name="focus" value="Women's Social Issues">Women's Social Issues</input><br>
+								<input type="checkbox" name="focus" value="Mental Health">Mental
+								Health</input><br> <input type="checkbox" name="focus"
+									value="Science, Technology, Engineering, and Mathematics">Science,
+								Technology, Engineering, and Mathematics</input><br> <input
+									type="checkbox" name="focus" value="Social Equality">Social
+								Equality</input><br> <input type="checkbox" name="focus"
+									value="Women's Social Issues">Women's Social Issues</input><br>
 								<input type="checkbox" name="focus" value="Other">Other</input><br>
 							</div>
 						</div>
@@ -197,12 +200,12 @@
 						<!-- 10 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
-							<label>Project
-							 Description</label> <input type="text" class="form-control"
-								placeholder="Project Description" name="form-project_description" id="form-project_description"
+							<label>Project Description</label> <input type="text"
+								class="form-control" placeholder="Project Description"
+								name="form-project_description" id="form-project_description"
 								required
 								data-validation-required-message="Please enter the description of the project.">
-                            <p class="help-block text-danger"></p>
+							<p class="help-block text-danger"></p>
 						</div>
 						<br>
 						<div id="success"></div>
@@ -254,59 +257,56 @@
 	<script src="js/mailgun_validator.js"></script>
 
 	<script>
+		$(function() {
 
-	 $(function() {
+			// capture all enter and do nothing
+			$('#email').keypress(function(e) {
+				if (e.which == 13) {
+					$('#email').trigger('focusout');
+					return false;
+				}
+			});
 
-	        // capture all enter and do nothing
-	        $('#email').keypress(function(e) {
-	          if(e.which == 13) {
-	            $('#email').trigger('focusout');
-	            return false;
-	          }
-	        });
+			// capture clicks on validate and do nothing
+			$('#email').blur(function() {
+				return false;
+			});
 
-	        // capture clicks on validate and do nothing
-	        $('#email').blur(function() {
-	          return false;
-	        });
+			// attach jquery plugin to validate address
+			$('#email').mailgun_validator({
+				api_key : 'pubkey-83a6-sl6j2m3daneyobi87b3-ksx3q29',
+				success : validation_success,
+				error : validation_error,
+			});
 
-	        // attach jquery plugin to validate address
-	        $('#email').mailgun_validator({
-	          api_key: 'pubkey-83a6-sl6j2m3daneyobi87b3-ksx3q29',
-	      	   success: validation_success,
-	          error: validation_error,
-	        });
+		});
+		// if email successfull validated
+		function validation_success(data) {
+			$('#status').html(
+					get_suggestion_str(data['is_valid'], data['did_you_mean']));
+		}
 
-	      });
-     // if email successfull validated
-     function validation_success(data) {
-       $('#status').html(get_suggestion_str(data['is_valid'], data['did_you_mean']));
-     }
+		// if email is invalid
+		function validation_error(error_message) {
+			$('#status').html(error_message);
+		}
 
-
-
-     // if email is invalid
-     function validation_error(error_message) {
-       $('#status').html(error_message);
-     }
-
-     // suggest a valid email
-     function get_suggestion_str(is_valid, alternate) {
-       if (is_valid) {
-         var result = '<span class="success">Address is valid.</span>';
-         if (alternate) {
-           result += '<span class="warning"> (Though did you mean <em>' + alternate + '</em>?)</span>';
-         }
-         return result
-       } else if (alternate) {
-         return '<span class="warning">Did you mean <em>' +  alternate + '</em>?</span>';
-       } else {
-         return '<span class="error">Address is invalid.</span>';
-       }
-     }
-	
-
-	
+		// suggest a valid email
+		function get_suggestion_str(is_valid, alternate) {
+			if (is_valid) {
+				var result = '<span class="success">Address is valid.</span>';
+				if (alternate) {
+					result += '<span class="warning"> (Though did you mean <em>'
+							+ alternate + '</em>?)</span>';
+				}
+				return result
+			} else if (alternate) {
+				return '<span class="warning">Did you mean <em>' + alternate
+						+ '</em>?</span>';
+			} else {
+				return '<span class="error">Address is invalid.</span>';
+			}
+		}
 	</script>
 
 

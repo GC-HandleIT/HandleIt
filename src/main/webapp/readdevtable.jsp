@@ -1,5 +1,5 @@
-<%@page import="com.HandleIT.DevObj"%>
-<%@page import="com.servletpkg.DevConn"%>
+<%@page import="com.HandleIT.Developer"%>
+<%@page import="com.dao.DevDAO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -87,10 +87,10 @@
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 				<form action="DevServlet" method="post">
 					<%
-						if (!(DevConn.soughtDevs.isEmpty())) {
-							for (int i = 0; i < DevConn.soughtDevs.size(); i++) {
-								DevObj devForTable = new DevObj();
-								devForTable = DevConn.soughtDevs.get(i);
+						if (!(DevDAO.soughtDevs.isEmpty())) {
+							for (int i = 0; i < DevDAO.soughtDevs.size(); i++) {
+								Developer devForTable = new Developer();
+								devForTable = DevDAO.soughtDevs.get(i);
 					%>
 					<ul>
 						<li><%=devForTable.getFirstName()%></li>
@@ -108,7 +108,7 @@
 					%>
 
 					<%
-						DevConn.soughtDevs.clear();
+						DevDAO.soughtDevs.clear();
 					%>
 
 				</form>

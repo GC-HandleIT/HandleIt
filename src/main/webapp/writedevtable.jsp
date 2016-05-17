@@ -170,12 +170,12 @@
 								<p>Projects</p>
 								<input type="checkbox" name="project_type" value="*">All</input><br>
 								<input type="checkbox" name="project_type" value="Databases">Databases</input><br>
-								<input type="checkbox" name="project_type" value="Simple Websites">Simple
-								Websites</input><br> 
 								<input type="checkbox" name="project_type"
-									value="Web Applications">Web Applications</input><br> <input
-									type="checkbox" name="project_type" value="Android Applications">Android
+									value="Simple Websites">Simple Websites</input><br> <input
+									type="checkbox" name="project_type" value="Web Applications">Web
 								Applications</input><br> <input type="checkbox" name="project_type"
+									value="Android Applications">Android Applications</input><br>
+								<input type="checkbox" name="project_type"
 									value="IOS Applications">IOS Applications</input>
 							</div>
 						</div>
@@ -192,15 +192,13 @@
 								<input type="checkbox" name="skills" value="AngularJS">AngularJS</input><br>
 								<input type="checkbox" name="skills" value="C">C</input><br>
 								<input type="checkbox" name="skills" value="C#">C#</input><br>
-								<input type="checkbox" name="skills" value="C++">C++</input><br> 
-								<input
-									type="checkbox" name="skills" value="HTML/CSS">HTML/CSS</input><br>
+								<input type="checkbox" name="skills" value="C++">C++</input><br>
+								<input type="checkbox" name="skills" value="HTML/CSS">HTML/CSS</input><br>
 								<input type="checkbox" name="skills" value="Java">Java</input><br>
 								<input type="checkbox" name="skills" value="JavaScript">Javascript</input><br>
 								<input type="checkbox" name="skills" value="Node.js">Node.js</input><br>
 								<input type="checkbox" name="skills" value="Objective C">Objective
-								C</input><br> 
-								<input type="checkbox" name="skills" value="PHP">PHP</input><br>
+								C</input><br> <input type="checkbox" name="skills" value="PHP">PHP</input><br>
 								<input type="checkbox" name="skills" value="Python">Python</input><br>
 								<input type="checkbox" name="skills" value="Ruby">Ruby</input><br>
 								<input type="checkbox" name="skills" value="SQL">SQL</input><br>
@@ -266,17 +264,15 @@
 				}
 			});
 
-
-	        // capture clicks on validate and do nothing
-	        $("#email_address").blur(function() {
-	          return false;
-	        });
+			// capture clicks on validate and do nothing
+			$("#email_address").blur(function() {
+				return false;
+			});
 
 			// capture clicks on validate and do nothing
 			$("#email_address").blur(function() {
 				return true;
 			});
-
 
 			// attach jquery plugin to validate address
 			$("#email_address").mailgun_validator({

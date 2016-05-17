@@ -1,5 +1,5 @@
-<%@page import="com.servletpkg.NonProfConn"%>
-<%@page import="com.HandleIT.NonProfObj"%>
+<%@page import="com.dao.NonProfitDAO"%>
+<%@page import="com.HandleIT.NonProfit"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -86,7 +86,7 @@
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 				<%
-					NonProfObj helloNP = NonProfConn.whoIsLogingIn;
+					NonProfit helloNP = NonProfitDAO.whoIsLogingIn;
 				%>
 
 				<h2 style="text-align: center;" class="section-heading">

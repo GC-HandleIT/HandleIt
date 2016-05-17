@@ -1,5 +1,5 @@
-<%@page import="com.HandleIT.NonProfObj"%>
-<%@page import="com.servletpkg.NonProfConn"%>
+<%@page import="com.HandleIT.NonProfit"%>
+<%@page import="com.dao.NonProfitDAO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -92,10 +92,10 @@
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 				<form action="NonProfServlet" method="post">
 					<%
-						if (!(NonProfConn.soughtNps.isEmpty())) {
-							for (int i = 0; i < NonProfConn.soughtNps.size(); i++) {
-								NonProfObj npForTable = new NonProfObj();
-								npForTable = NonProfConn.soughtNps.get(i);
+						if (!(NonProfitDAO.soughtNps.isEmpty())) {
+							for (int i = 0; i < com.dao.NonProfitDAO.soughtNps.size(); i++) {
+								NonProfit npForTable = new NonProfit();
+								npForTable = NonProfitDAO.soughtNps.get(i);
 					%>
 					<ul>
 						<li><%=npForTable.getName()%></li>
@@ -114,7 +114,7 @@
 					%>
 
 					<%
-						NonProfConn.soughtNps.clear();
+						NonProfitDAO.soughtNps.clear();
 					%>
 					<hr>
 

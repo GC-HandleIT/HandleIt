@@ -1,4 +1,4 @@
-package com.servletpkg;
+package com.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,11 +10,11 @@ import java.util.ArrayList;
 
 import com.HandleIT.*;
 
-public class NonProfConn {
+public class NonProfitDAO {
 
-	static boolean passOrFail = false;
-	public static ArrayList<NonProfObj> soughtNps = new ArrayList<>();
-	public static NonProfObj whoIsLogingIn = new NonProfObj();
+	public static boolean passOrFail = false;
+	public static ArrayList<NonProfit> soughtNps = new ArrayList<>();
+	public static NonProfit whoIsLogingIn = new NonProfit();
 
 	static final String JBDC_DRIVER = "com.mysql.jdbc.Driver";
 	static final String DB_URL = "jdbc:mysql://localhost:3306/?user=root?autoReconnect=true&useSSL=false";
@@ -58,7 +58,7 @@ public class NonProfConn {
 
 			while (resSet.next()) {
 
-				NonProfObj npForDev = new NonProfObj();
+				NonProfit npForDev = new NonProfit();
 
 				npForDev.setName(resSet.getString("name"));
 				npForDev.setPassword(resSet.getString("password"));
@@ -84,7 +84,7 @@ public class NonProfConn {
 
 	}
 
-	public static void writeToNPTable(NonProfObj newNPObj) {
+	public static void writeToNPTable(NonProfit newNPObj) {
 
 		try {
 			initConnToDatabase();
@@ -109,7 +109,7 @@ public class NonProfConn {
 		}
 	}
 
-	public static boolean npLoginSearch(NonProfObj loginNP) {
+	public static boolean npLoginSearch(NonProfit loginNP) {
 
 		String email = loginNP.getEmailAddress();
 		String password = loginNP.getPassword();
@@ -123,7 +123,7 @@ public class NonProfConn {
 
 			while (resSet.next()) {
 
-				NonProfObj npForLogin = new NonProfObj();
+				NonProfit npForLogin = new NonProfit();
 
 				npForLogin.setName(resSet.getString("name"));
 				npForLogin.setPassword(resSet.getString("password"));

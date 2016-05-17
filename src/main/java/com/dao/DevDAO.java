@@ -1,4 +1,4 @@
-package com.servletpkg;
+package com.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,13 +8,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import com.HandleIT.DevObj;
+import com.HandleIT.Developer;
 
-public class DevConn {
+public class DevDAO {
 
-	static boolean passOrFail = false;
-	public static ArrayList<DevObj> soughtDevs = new ArrayList<>();
-	public static DevObj whoIsLogingIn = new DevObj();
+	public static boolean passOrFail = false;
+	public static ArrayList<Developer> soughtDevs = new ArrayList<>();
+	public static Developer whoIsLogingIn = new Developer();
 
 	static final String JBDC_DRIVER = "com.mysql.jdbc.Driver";
 	static final String DB_URL = "jdbc:mysql://localhost:3306/?user=root?autoReconnect=true&useSSL=false";
@@ -58,7 +58,7 @@ public class DevConn {
 
 			while (resSet.next()) {
 
-				DevObj devForNP = new DevObj();
+				Developer devForNP = new Developer();
 
 				devForNP.setFirstName(resSet.getString("first_name"));
 				devForNP.setLastName(resSet.getString("last_name"));
@@ -84,7 +84,7 @@ public class DevConn {
 
 	}
 
-	public static void writeToDevTable(DevObj newDevObj) {
+	public static void writeToDevTable(Developer newDevObj) {
 
 		try {
 			initConnToDatabase();
@@ -110,7 +110,7 @@ public class DevConn {
 		}
 	}
 
-	public static boolean devLoginSearch(DevObj loginDev) {
+	public static boolean devLoginSearch(Developer loginDev) {
 
 		String email = loginDev.getEmailAddress();
 		String password = loginDev.getPassword();
@@ -124,7 +124,7 @@ public class DevConn {
 
 			while (resSet.next()) {
 
-				DevObj devForLogin = new DevObj();
+				Developer devForLogin = new Developer();
 
 				devForLogin.setFirstName(resSet.getString("first_name"));
 				devForLogin.setLastName(resSet.getString("last_name"));

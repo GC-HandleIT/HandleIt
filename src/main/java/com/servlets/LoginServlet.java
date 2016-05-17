@@ -1,4 +1,4 @@
-package com.servletpkg;
+package com.servlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,15 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.HandleIT.DevObj;
-import com.HandleIT.NonProfObj;
+import com.HandleIT.Developer;
+import com.HandleIT.NonProfit;
+import com.dao.DevDAO;
+import com.dao.NonProfitDAO;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	DevObj loginDev = new DevObj();
-	NonProfObj loginNP = new NonProfObj();
+	Developer loginDev = new Developer();
+	NonProfit loginNP = new NonProfit();
 
 	public LoginServlet() {
 		super();
@@ -41,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 
 				System.out.println("Collected Dev to login.");
 
-				boolean lostOrFound = DevConn.devLoginSearch(loginDev);
+				boolean lostOrFound = DevDAO.devLoginSearch(loginDev);
 
 				if (lostOrFound) {
 					response.sendRedirect("developerportal.jsp");
@@ -58,7 +60,7 @@ public class LoginServlet extends HttpServlet {
 
 				System.out.println("Collected NP to login.");
 
-				boolean lostOrFound = NonProfConn.npLoginSearch(loginNP);
+				boolean lostOrFound = NonProfitDAO.npLoginSearch(loginNP);
 
 				if (lostOrFound) {
 					response.sendRedirect("nonprofitportal.jsp");
@@ -81,7 +83,7 @@ public class LoginServlet extends HttpServlet {
 
 					System.out.println("Collected NP to login");
 
-					NonProfConn.npLoginSearch(loginNP);
+					NonProfitDAO.npLoginSearch(loginNP);
 
 					response.sendRedirect("nonprofitportal.jsp");
 					System.out.println("NP was found and redirected.");

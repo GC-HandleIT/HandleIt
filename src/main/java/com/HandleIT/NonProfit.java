@@ -1,6 +1,6 @@
 package com.HandleIT;
 
-public class NonProfObj {
+public class NonProfit {
 
 	private String name;
 	private String password;
@@ -12,7 +12,7 @@ public class NonProfObj {
 	private String projectType;
 	private String projectDescription;
 
-	public NonProfObj(String name, String password, String link, String contactPerson, String emailAddress,
+	public NonProfit(String name, String password, String link, String contactPerson, String emailAddress,
 			String focus, String location, String projectType, String projectDescription) {
 		super();
 		this.name = name;
@@ -26,7 +26,7 @@ public class NonProfObj {
 		this.projectDescription = projectDescription;
 	}
 
-	public NonProfObj() {
+	public NonProfit() {
 	}
 
 	public String getName() {

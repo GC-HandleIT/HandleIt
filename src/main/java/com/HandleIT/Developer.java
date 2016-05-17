@@ -1,6 +1,6 @@
 package com.HandleIT;
 
-public class DevObj {
+public class Developer {
 
 	private String firstName;
 	private String lastName;
@@ -12,7 +12,7 @@ public class DevObj {
 	private String projects;
 	private String skills;
 
-	public DevObj(String firstName, String lastName, String password, String emailAddress, String location,
+	public Developer(String firstName, String lastName, String password, String emailAddress, String location,
 			String picUrl, String profileUrl, String projects, String skills) {
 		super();
 		this.firstName = firstName;
@@ -26,7 +26,7 @@ public class DevObj {
 		this.skills = skills;
 	}
 
-	public DevObj() {
+	public Developer() {
 	}
 
 	public String getFirstName() {

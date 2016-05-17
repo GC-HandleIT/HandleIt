@@ -47,7 +47,8 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="about.jsp" style="text-shadow: 2px 2px 4px #000000;">Who We Are</a>
+			<a class="navbar-brand" href="about.jsp"
+				style="text-shadow: 2px 2px 4px #000000;">Who We Are</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -55,25 +56,26 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
 
-				<li style="display: inline-block; text-shadow: 2px 2px 4px #000000;" class="dropdown"><a
-					href="javascript:void(0)" class="dropbtn"
+				<li style="display: inline-block; text-shadow: 2px 2px 4px #000000;"
+					class="dropdown"><a href="javascript:void(0)" class="dropbtn"
 					onclick="dropFunctionSign()">Sign-Up</a>
-					<div style="display: none; text-shadow: 2px 2px 4px #000000;"  class="dropdown-content"
-						id="signDropdown">
-						<a href="writedevtable.jsp" >Developer</a> <a
+					<div style="display: none; text-shadow: 2px 2px 4px #000000;"
+						class="dropdown-content" id="signDropdown">
+						<a href="writedevtable.jsp">Developer</a> <a
 							href="writenptable.jsp">NonProfit</a>
 					</div></li>
 
-				<li style="display: inline-block; text-shadow: 2px 2px 4px #000000;" class="dropdown"><a
-					href="javascript:void(0)" class="dropbtn"
+				<li style="display: inline-block; text-shadow: 2px 2px 4px #000000;"
+					class="dropdown"><a href="javascript:void(0)" class="dropbtn"
 					onclick="dropFunctionLog()">Login</a>
-					<div style="display: none; text-shadow: 2px 2px 4px #000000;" class="dropdown-content"
-						id="loginDropdown">
+					<div style="display: none; text-shadow: 2px 2px 4px #000000;"
+						class="dropdown-content" id="loginDropdown">
 						<a href="devlogin.jsp">Developer</a> <a href="nplogin.jsp">NonProfit</a>
 					</div></li>
 
 
-				<li><a href="contact.jsp" style="text-shadow: 2px 2px 4px #000000;">Contact</a></li>
+				<li><a href="contact.jsp"
+					style="text-shadow: 2px 2px 4px #000000;">Contact</a></li>
 			</ul>
 		</div>
 	</div>

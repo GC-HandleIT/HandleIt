@@ -1,4 +1,4 @@
-package com.servletpkg;
+package com.servlets;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -9,14 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.HandleIT.NonProfObj;
+import com.HandleIT.NonProfit;
+import com.dao.NonProfitDAO;
 
 @WebServlet("/NonProfServlet")
 public class NonProfServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	NonProfObj npToAddToDB = new NonProfObj();
-	NonProfObj searchANP = new NonProfObj();
+	NonProfit npToAddToDB = new NonProfit();
+	NonProfit searchANP = new NonProfit();
 
 	public NonProfServlet() {
 		super();
@@ -51,9 +52,9 @@ public class NonProfServlet extends HttpServlet {
 
 				System.out.println("Collected a NP table entry.");
 
-				NonProfConn.writeToNPTable(npToAddToDB);
+				NonProfitDAO.writeToNPTable(npToAddToDB);
 
-				if (NonProfConn.passOrFail) {
+				if (com.dao.NonProfitDAO.passOrFail) {
 					response.sendRedirect("nplogin.jsp");
 					System.out.println("Np has been added to the db.");
 				}
@@ -68,7 +69,7 @@ public class NonProfServlet extends HttpServlet {
 
 			System.out.println(searchByProjects + " & " + searchByFocus);
 
-			foundANP = NonProfConn.searchForANP(searchByProjects, searchByFocus);
+			foundANP = NonProfitDAO.searchForANP(searchByProjects, searchByFocus);
 
 			if (foundANP) {
 				response.sendRedirect("readnptable.jsp");
