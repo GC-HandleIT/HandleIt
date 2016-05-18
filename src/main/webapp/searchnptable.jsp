@@ -96,26 +96,26 @@
 
 						<td><select name="project_type">
 								<option value="*">All</option>
-								<option value="database">Databases</option>
-								<option value="Website">Simple Website</option>
-								<option value="web_app">Web Applications</option>
-								<option value="android_app">Android Applications</option>
-								<option value="ios_app">IOS Applications</option>
+								<option value="Database">Databases</option>
+								<option value="Simple Website">Simple Website</option>
+								<option value="Web Application">Web Application</option>
+								<option value="Android Application">Android Application</option>
+								<option value="IOS Application">IOS Application</option>
 						</select></td>
 
 						<td><select name="focus">
 								<option value="*">All</option>
-								<option value="animals">Animals</option>
-								<option value="children">Children</option>
-								<option value="environment">Environment</option>
-								<option value="homelessness">Homelessness</option>
-								<option value="lgbt">LGBTQIA</option>
-								<option value="mental_health">Mental Health</option>
-								<option value="stem">Science, Technology, Engineering,
+								<option value="Animals">Animals</option>
+								<option value="Children">Children</option>
+								<option value="Environment">Environment</option>
+								<option value="Homelessness">Homelessness</option>
+								<option value="LGBTQIA">LGBTQIA</option>
+								<option value="Mental Health">Mental Health</option>
+								<option value="Science, Technology, Engineering, and Mathematics">Science, Technology, Engineering,
 									and Mathematics</option>
-								<option value="social_equ">Social Equality</option>
-								<option value="women">Women's Social Issues</option>
-								<option value="other">Other</option>
+								<option value="Social Equality">Social Equality</option>
+								<option value="Women's Social Issues">Women's Social Issues</option>
+								<option value="Other">Other</option>
 						</select></td>
 					</table>
 					<hr>

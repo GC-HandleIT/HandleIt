@@ -183,7 +183,7 @@
 								<input type="checkbox" name="focus" value="Animals">Animals</input><br>
 								<input type="checkbox" name="focus" value="Children">Children</input><br>
 								<input type="checkbox" name="focus" value="Environment">Environment</input><br>
-								<input type="checkbox" name="focus" value="Honelessness">Homelessness</input><br>
+								<input type="checkbox" name="focus" value="Homelessness">Homelessness</input><br>
 								<input type="checkbox" name="focus" value="LGBTQIA">LGBTQIA</input><br>
 								<input type="checkbox" name="focus" value="Mental Health">Mental
 								Health</input><br> <input type="checkbox" name="focus"

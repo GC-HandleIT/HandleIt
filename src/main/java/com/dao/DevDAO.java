@@ -159,13 +159,15 @@ public class DevDAO {
 			return "SELECT * FROM ebdb.devtable;";
 
 		} else if (projectType.equalsIgnoreCase("*")) {
-			return "SELECT * FROM ebdb.devtable WHERE `skills` LIKE '" + skills + ";";
+
+			return "SELECT * FROM ebdb.devtable WHERE `skills` LIKE '%" + skills + "%';";
 
 		} else if (skills.equalsIgnoreCase("*")) {
-			return "SELECT * FROM ebdb.devtable WHERE `projects` LIKE '" + projectType + ";";
+			return "SELECT * FROM ebdb.devtable WHERE `projects` LIKE '%" + projectType + "%';";
 		}
-		return "SELECT * FROM ebdb.devtable WHERE `projects` LIKE '" + projectType + "' AND `skills` LIKE '"
-				+ projectType + ";";
+		return "SELECT * FROM ebdb.devtable WHERE `projects` LIKE '%" + projectType + "%' AND `skills` LIKE '%"
+				+ skills + "%';";
+
 
 	}
 
