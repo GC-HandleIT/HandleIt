@@ -17,9 +17,9 @@ public class NonProfitDAO {
 	public static NonProfit whoIsLogingIn = new NonProfit();
 
 	static final String JBDC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://localhost:3306/?user=root?autoReconnect=true&useSSL=false";
-	static final String USER = "root";
-	static final String PASSWORD = "sesame";
+	static final String DB_URL = "jdbc:mysql://aamcrp1u0ce3lq.cowwq3mhevc0.us-east-1.rds.amazonaws.com:3306";
+	static final String USER = "handleit";
+	static final String PASSWORD = "handl31t";
 
 	public static Connection conn = null;
 	public static Statement stmt = null;
@@ -118,7 +118,7 @@ public class NonProfitDAO {
 
 			initConnToDatabase();
 			stmt = conn.createStatement();
-			resSet = stmt.executeQuery("SELECT * FROM `handleitdb`.`nonprofittable` where `email_address` like '"
+			resSet = stmt.executeQuery("SELECT * FROM `ebdb`.`nonprofittable` where `email_address` like '"
 					+ email + "' and `password` like '" + password + "';");
 
 			while (resSet.next()) {
@@ -147,22 +147,22 @@ public class NonProfitDAO {
 		return false;
 	}
 
-	private static String insertToTable = "INSERT INTO `handleitdb`.`nonprofittable` "
+	private static String insertToTable = "INSERT INTO `ebdb`.`nonprofittable` "
 			+ "(`name`, `password`, `link`, `contact_person`, `email_address`, `location`, `focus`, `project_type`, `project_description`)"
 			+ " VALUES " + "(?,?,?,?,?,?,?,?,?)";
 
 	private static String whichStmt(String projectType, String focus) {
 
 		if (projectType.equalsIgnoreCase("*") && focus.equalsIgnoreCase("*")) {
-			return "SELECT * FROM handleitdb.nonprofittable;";
+			return "SELECT * FROM ebdb.nonprofittable;";
 
 		} else if (projectType.equalsIgnoreCase("*")) {
 			return "SELECT * FROM handleitdb.devtable WHERE `skills` LIKE '" + focus + ";";
 
 		} else if (focus.equalsIgnoreCase("*")) {
-			return "SELECT * FROM handleitdb.devtable WHERE `projects` LIKE '" + projectType + ";";
+			return "SELECT * FROM ebdb.nonprofittable WHERE `projects` LIKE '" + projectType + ";";
 		}
-		return "SELECT * FROM handleitdb.devtable WHERE `projects` LIKE '" + projectType + "' AND `skills` LIKE '"
+		return "SELECT * FROM ebdb.nonprofittable WHERE `projects` LIKE '" + projectType + "' AND `skills` LIKE '"
 				+ projectType + ";";
 
 	}

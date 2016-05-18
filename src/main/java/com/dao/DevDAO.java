@@ -15,11 +15,12 @@ public class DevDAO {
 	public static boolean passOrFail = false;
 	public static ArrayList<Developer> soughtDevs = new ArrayList<>();
 	public static Developer whoIsLogingIn = new Developer();
-
+	
+	
 	static final String JBDC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://localhost:3306/?user=root?autoReconnect=true&useSSL=false";
-	static final String USER = "root";
-	static final String PASSWORD = "sesame";
+	static final String DB_URL = "jdbc:mysql://aamcrp1u0ce3lq.cowwq3mhevc0.us-east-1.rds.amazonaws.com:3306";
+	static final String USER = "handleit";
+	static final String PASSWORD = "handl31t";
 
 	public static Connection conn = null;
 	public static Statement stmt = null;
@@ -119,7 +120,7 @@ public class DevDAO {
 
 			initConnToDatabase();
 			stmt = conn.createStatement();
-			resSet = stmt.executeQuery("SELECT * FROM `handleitdb`.`devtable` where `email_address` like '" + email
+			resSet = stmt.executeQuery("SELECT * FROM `ebdb`.`devtable` where `email_address` like '" + email
 					+ "' and `password` like '" + password + "';");
 
 			while (resSet.next()) {
@@ -148,22 +149,22 @@ public class DevDAO {
 		return false;
 	}
 
-	private static String insertToTable = "INSERT INTO `handleitdb`.`devtable` "
+	private static String insertToTable = "INSERT INTO `ebdb`.`devtable` "
 			+ "(`first_name`, `last_name`, `password`, `email_address`, `location`, `picture_url`, `public_profile_url`, `projects`, `skills`)"
 			+ " VALUES " + "(?,?,?,?,?,?,?,?,?)";
 
 	private static String whichStmt(String projectType, String skills) {
 
 		if (projectType.equalsIgnoreCase("*") && skills.equalsIgnoreCase("*")) {
-			return "SELECT * FROM handleitdb.devtable;";
+			return "SELECT * FROM ebdb.devtable;";
 
 		} else if (projectType.equalsIgnoreCase("*")) {
-			return "SELECT * FROM handleitdb.devtable WHERE `skills` LIKE '" + skills + ";";
+			return "SELECT * FROM ebdb.devtable WHERE `skills` LIKE '" + skills + ";";
 
 		} else if (skills.equalsIgnoreCase("*")) {
-			return "SELECT * FROM handleitdb.devtable WHERE `projects` LIKE '" + projectType + ";";
+			return "SELECT * FROM ebdb.devtable WHERE `projects` LIKE '" + projectType + ";";
 		}
-		return "SELECT * FROM handleitdb.devtable WHERE `projects` LIKE '" + projectType + "' AND `skills` LIKE '"
+		return "SELECT * FROM ebdb.devtable WHERE `projects` LIKE '" + projectType + "' AND `skills` LIKE '"
 				+ projectType + ";";
 
 	}
