@@ -186,7 +186,7 @@
 							class="form-group col-xs-12 floating-label-form-group controls">
 							<label>Skills</label>
 							<div style="font-size: 1.5em; color: #808080;">
-								<p>Projects</p>
+								<p>Skills</p>
 								<input type="checkbox" name="skills" value="*">All</input><br>
 								<input type="checkbox" name="skills" value=".Net">.Net</input><br>
 								<input type="checkbox" name="skills" value="AngularJS">AngularJS</input><br>
