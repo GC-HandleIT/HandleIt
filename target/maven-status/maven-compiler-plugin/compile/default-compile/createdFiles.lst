@@ -1,9 +1,9 @@
-com\servletpkg\DevServlet.class
+com\dao\DevDAO.class
+com\servlets\LoginServlet.class
 com\HandleIT\LaunchIndex.class
-com\servletpkg\NonProfServlet.class
-com\utilities\Utilities.class
-com\utilities\Validation.class
-com\servletpkg\NonProfConn.class
-com\servletpkg\DevConn.class
-com\HandleIT\DevObj.class
-com\HandleIT\NonProfObj.class
+com\HandleIT\NonProfit.class
+com\servlets\SearchRedirectServlet.class
+com\dao\NonProfitDAO.class
+com\servlets\DevServlet.class
+com\HandleIT\Developer.class
+com\servlets\NonProfServlet.class

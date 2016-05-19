@@ -1,4 +1,4 @@
-/*!
+ /*!
  * Clean Blog v1.0.0 (http://startbootstrap.com)
  * Copyright 2014 Start Bootstrap
  * Licensed under Apache 2.0 (https://github.com/IronSummitMedia/startbootstrap/blob/gh-pages/LICENSE)
@@ -447,4 +447,27 @@ img::-moz-selection {
 
 body {
 	webkit-tap-highlight-color: #0085a1
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: #66b3ff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.theCheckboxes {
+	
 }
