@@ -146,15 +146,6 @@
 						<!-- 6 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
-							<label>Picture Url</label> <input type="text"
-								class="form-control" placeholder="Picture Url"
-								name="form-picture_url" id="picture_url">
-						</div>
-					</div>
-					<div class="row control-group">
-						<!-- 7 -->
-						<div
-							class="form-group col-xs-12 floating-label-form-group controls">
 							<label>LinkedIn Profile Url</label> <input type="text"
 								class="form-control" placeholder="LinkedIn Profile Url"
 								name="form-profile_url" id="profile_url" required

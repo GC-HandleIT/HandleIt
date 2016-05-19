@@ -7,20 +7,18 @@ public class Developer {
 	private String password;
 	private String emailAddress;
 	private String location;
-	private String picUrl;
 	private String profileUrl;
 	private String projects;
 	private String skills;
 
 	public Developer(String firstName, String lastName, String password, String emailAddress, String location,
-			String picUrl, String profileUrl, String projects, String skills) {
+			String profileUrl, String projects, String skills) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.password = password;
 		this.emailAddress = emailAddress;
 		this.location = location;
-		this.picUrl = picUrl;
 		this.profileUrl = profileUrl;
 		this.projects = projects;
 		this.skills = skills;
@@ -67,14 +65,6 @@ public class Developer {
 
 	public void setLocation(String location) {
 		this.location = location;
-	}
-
-	public String getPicUrl() {
-		return picUrl;
-	}
-
-	public void setPicUrl(String picUrl) {
-		this.picUrl = picUrl;
 	}
 
 	public String getProfileUrl() {
