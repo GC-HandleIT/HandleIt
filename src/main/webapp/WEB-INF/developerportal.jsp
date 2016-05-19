@@ -1,5 +1,6 @@
-<%@page import="com.dao.NonProfitDAO"%>
-<%@page import="com.HandleIT.NonProfit"%>
+<%@page import="com.HandleIT.Developer"%>
+<%@page import="com.dao.DevDAO"%>
+<%@page import="com.HandleIT.Developer"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -13,7 +14,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>NonProfit's Portal</title>
+<title>Developers Portal</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -64,13 +65,13 @@
 	<!-- Page Header -->
 	<!-- Set your background image for this header on the line below. -->
 	<header class="intro-header"
-		style="background-image: url('img/nonprofportal.jpg')">
+		style="background-image: url('img/devportal.jpg')">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 				<div class="post-heading">
 					<h1 style="text-shadow: 2px 2px 4px #000000; text-align: center;">For
-						the NonProfit</h1>
+						the Developer</h1>
 					<h2
 						style="text-align: center; text-shadow: 2px 2px 2px #000000; font-weight: 300;"
 						class="subheading">Giving Back to Those Who Give</h2>
@@ -86,46 +87,47 @@
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 				<%
-					NonProfit helloNP = NonProfitDAO.whoIsLogingIn;
+					Developer helloDev = com.dao.DevDAO.whoIsLogingIn;
 				%>
 
 				<h2 style="text-align: center;" class="section-heading">
 					Hello
-					<%=helloNP.getName()%>
+					<%=helloDev.getFirstName()%>
 				</h2>
 
-				<p>
-					Click <a href="searchdevtable.jsp">here</a> to search for a
-					Developer.
-				</p>
+				<form action="SearchRedirectServlet" method="post">
+				<input type="hidden" name="searchNPTable" value="searchNPTable" >
+					<input type="submit" value="Search for a NonProfit" name="searchNPTable">
+				</form>
 
 				<hr>
 
 				<h2>Your settings</h2>
 				<br>
 
-				<h4>Contact Person</h4>
-				<p><%=helloNP.getContactPerson()%>
+				<h4>Name</h4>
+				<p><%=helloDev.getFirstName()%>
+					<%=helloDev.getLastName()%></p>
 				<hr>
 
 				<h4>Email Address</h4>
-				<p><%=helloNP.getEmailAddress()%></p>
+				<p><%=helloDev.getEmailAddress()%></p>
 				<hr>
 
 				<h4>Location</h4>
-				<p><%=helloNP.getLocation()%></p>
-				<hr>
-
-				<h4>Focus</h4>
-				<p><%=helloNP.getFocus()%></p>
+				<p><%=helloDev.getLocation()%></p>
 				<hr>
 
 				<h4>Project Types</h4>
-				<p><%=helloNP.getProjectType()%></p>
+				<p><%=helloDev.getProjects()%></p>
 				<hr>
 
-				<h4>Link</h4>
-				<p><%=helloNP.getLink()%></p>
+				<h4>Skills</h4>
+				<p><%=helloDev.getSkills()%></p>
+				<hr>
+
+				<h4>LinkedIn URL</h4>
+				<p><%=helloDev.getProfileUrl()%></p>
 
 			</div>
 		</div>

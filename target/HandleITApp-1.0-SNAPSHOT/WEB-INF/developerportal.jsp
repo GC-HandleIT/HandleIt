@@ -95,10 +95,10 @@
 					<%=helloDev.getFirstName()%>
 				</h2>
 
-				<p>
-					Click <a href="searchnptable.jsp">here</a> to search for a
-					NonProfit.
-				</p>
+				<form action="SearchRedirectServlet" method="post">
+				<input type="hidden" name="searchNPTable" value="searchNPTable" >
+					<input type="submit" value="Search for a NonProfit" name="searchNPTable">
+				</form>
 
 				<hr>
 
