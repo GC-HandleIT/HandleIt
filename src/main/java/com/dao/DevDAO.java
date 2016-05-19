@@ -66,7 +66,6 @@ public class DevDAO {
 				devForNP.setPassword(resSet.getString("password"));
 				devForNP.setEmailAddress(resSet.getString("email_address"));
 				devForNP.setLocation(resSet.getString("location"));
-				devForNP.setPicUrl(resSet.getString("picture_url"));
 				devForNP.setProfileUrl(resSet.getString("public_profile_url"));
 				devForNP.setProjects(resSet.getString("projects"));
 				devForNP.setSkills(resSet.getString("skills"));
@@ -96,7 +95,6 @@ public class DevDAO {
 			prepStmt.setString(3, newDevObj.getPassword());
 			prepStmt.setString(4, newDevObj.getEmailAddress());
 			prepStmt.setString(5, newDevObj.getLocation());
-			prepStmt.setString(6, newDevObj.getPicUrl());
 			prepStmt.setString(7, newDevObj.getProfileUrl());
 			prepStmt.setString(8, newDevObj.getProjects());
 			prepStmt.setString(9, newDevObj.getSkills());
@@ -132,7 +130,6 @@ public class DevDAO {
 				devForLogin.setPassword(resSet.getString("password"));
 				devForLogin.setEmailAddress(resSet.getString("email_address"));
 				devForLogin.setLocation(resSet.getString("location"));
-				devForLogin.setPicUrl(resSet.getString("picture_url"));
 				devForLogin.setProfileUrl(resSet.getString("public_profile_url"));
 				devForLogin.setProjects(resSet.getString("projects"));
 				devForLogin.setSkills(resSet.getString("skills"));
@@ -150,8 +147,8 @@ public class DevDAO {
 	}
 
 	private static String insertToTable = "INSERT INTO `ebdb`.`devtable`"
-			+ "(`first_name`, `last_name`, `password`, `email_address`, `location`, `picture_url`, `public_profile_url`, `projects`, `skills`)"
-			+ " VALUES " + "(?,?,?,?,?,?,?,?,?)";
+			+ "(`first_name`, `last_name`, `password`, `email_address`, `location`, `public_profile_url`, `projects`, `skills`)"
+			+ " VALUES " + "(?,?,?,?,?,?,?,?)";
 
 	private static String whichStmt(String projectType, String skills) {
 

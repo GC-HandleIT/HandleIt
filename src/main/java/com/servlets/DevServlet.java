@@ -45,7 +45,6 @@ public class DevServlet extends HttpServlet {
 				devToAddToDB.setPassword(request.getParameter("form-password"));
 				devToAddToDB.setEmailAddress(request.getParameter("form-email_address"));
 				devToAddToDB.setLocation(request.getParameter("form-location"));
-				devToAddToDB.setPicUrl(request.getParameter("form-picture_url"));
 				devToAddToDB.setProfileUrl(request.getParameter("form-profile_url"));
 				devToAddToDB.setProjects(Arrays.toString(projectTypes));
 				devToAddToDB.setSkills(Arrays.toString(skillTypes));
