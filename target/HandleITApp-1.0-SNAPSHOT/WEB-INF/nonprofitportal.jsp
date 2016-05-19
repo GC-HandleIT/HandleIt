@@ -94,7 +94,7 @@
 					<%=helloNP.getName()%>
 				</h2>
 
-				<form action="SearchRedirectServlet" method="post">
+				<form action="NPRedirectServlet" method="post">
 				<input type="hidden" name="searchDevTable" value="searchDevTable" >
 					<input type="submit" value="Search for a Developer" name="searchDevTable">
 				</form>
