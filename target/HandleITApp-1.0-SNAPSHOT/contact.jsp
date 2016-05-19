@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
 <head>
@@ -28,62 +30,50 @@
 	href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
 	rel='stylesheet' type='text/css'>
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 
 <body>
 
 	<!-- Navigation -->
 	<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-		<div class="container-fluid">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header page-scroll">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="index.html">HandleIT</a>
-			</div>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right">
-					<!-- <li><a href="index.html">Home</a></li> -->
-					<li><a href="nonprofit.html">Non-Profits</a></li>
-					<li><a href="developer.html">Developers</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header page-scroll">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.jsp">HandleIT</a>
 		</div>
-		<!-- /.container -->
-	</nav>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container --> </nav>
 
 	<!-- Page Header -->
 	<!-- Set your background image for this header on the line below. -->
 	<header class="intro-header"
 		style="background-image: url('img/contact.jpg')">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					<div class="page-heading">
-						<h1 style="text-shadow: 2px 2px 4px #000000;">Contact Us</h1>
-						<hr class="small">
-						<span style="text-shadow: 2px 2px 2px #000000; font-weight: 300;"
-							class="subheading"></span>
-					</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<div class="page-heading">
+					<h1 style="text-shadow: 2px 2px 4px #000000;">Contact Us</h1>
+					<hr class="small">
+					<span style="text-shadow: 2px 2px 2px #000000; font-weight: 300;"
+						class="subheading"></span>
 				</div>
 			</div>
 		</div>
+	</div>
 	</header>
 
 	<!-- Main Content -->
@@ -92,9 +82,7 @@
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 				<p>Questions? Comments? Concerns? We will make every attempt to
 					respond to you within 24 hours!</p>
-				<!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
-				<!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
-				<!-- NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+
 				<form name="sentMessage" id="contactForm" novalidate>
 					<div class="row control-group">
 						<div
@@ -151,32 +139,23 @@
 
 	<!-- Footer -->
 	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					<ul class="list-inline text-center">
-						<li><a href="#"> <span class="fa-stack fa-lg"> <i
-									class="fa fa-circle fa-stack-2x"></i> <i
-									class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-							</span>
-						</a></li>
-						<li><a href="#"> <span class="fa-stack fa-lg"> <i
-									class="fa fa-circle fa-stack-2x"></i> <i
-									class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-							</span>
-						</a></li>
-						<li><a href="https://github.com/GC-HandleIT/HandleIt"
-							target="_blank"> <span class="fa-stack fa-lg"> <i
-									class="fa fa-circle fa-stack-2x"></i> <i
-									class="fa fa-github fa-stack-1x fa-inverse"></i>
-							</span>
-						</a></li>
-					</ul>
-					<p class="copyright text-muted">Copyright &copy; The HandleIT
-						Project 2016</p>
-				</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<ul class="list-inline text-center">
+
+					<li><a href="https://github.com/GC-HandleIT/HandleIt"
+						target="_blank"> <span class="fa-stack fa-lg"> <i
+								class="fa fa-circle fa-stack-2x"></i> <i
+								class="fa fa-github fa-stack-1x fa-inverse"></i>
+						</span>
+					</a></li>
+				</ul>
+				<p class="copyright text-muted">Copyright &copy; The HandleIT
+					Project 2016</p>
 			</div>
 		</div>
+	</div>
 	</footer>
 
 	<!-- jQuery -->
