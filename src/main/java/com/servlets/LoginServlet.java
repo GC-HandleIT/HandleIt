@@ -7,7 +7,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.HandleIT.Developer;
 import com.HandleIT.NonProfit;
@@ -49,8 +48,6 @@ public class LoginServlet extends HttpServlet {
 
 				if (lostOrFound) {
 					System.out.println("Dev was found and redirected to profile.");
-					HttpSession session = request.getSession();
-					session.setAttribute("user", true);
 					request.getRequestDispatcher("/WEB-INF/developerportal.jsp").forward(request, response);
 
 				} else {
@@ -74,8 +71,6 @@ public class LoginServlet extends HttpServlet {
 
 					if (lostOrFound) {
 						System.out.println("Success, redirected to search.");
-						HttpSession session = request.getSession();
-						session.setAttribute("user", true);
 						request.getRequestDispatcher("/WEB-INF/nonprofitportal.jsp").forward(request, response);
 						System.out.println("NP was found and redirected.");
 
