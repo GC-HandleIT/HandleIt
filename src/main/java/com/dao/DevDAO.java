@@ -18,7 +18,7 @@ public class DevDAO {
 	
 	
 	static final String JBDC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String DB_URL = "aamcrp1u0ce3lq.cowwq3mhevc0.us-east-1.rds.amazonaws.com:3306";
+	static final String DB_URL = "jdbc:mysql://aamcrp1u0ce3lq.cowwq3mhevc0.us-east-1.rds.amazonaws.com:3306";
 	static final String USER = "handleit";
 	static final String PASSWORD = "handl31t";
 
