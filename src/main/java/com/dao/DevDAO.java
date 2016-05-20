@@ -95,9 +95,9 @@ public class DevDAO {
 			prepStmt.setString(3, newDevObj.getPassword());
 			prepStmt.setString(4, newDevObj.getEmailAddress());
 			prepStmt.setString(5, newDevObj.getLocation());
-			prepStmt.setString(7, newDevObj.getProfileUrl());
-			prepStmt.setString(8, newDevObj.getProjects());
-			prepStmt.setString(9, newDevObj.getSkills());
+			prepStmt.setString(6, newDevObj.getProfileUrl());
+			prepStmt.setString(7, newDevObj.getProjects());
+			prepStmt.setString(8, newDevObj.getSkills());
 
 			prepStmt.executeUpdate();
 

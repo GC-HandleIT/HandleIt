@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="Dev DB Entryform" content="">
-<meta name="ErinBergman" content="">
+<meta name="" content="">
 
 <title>Developer Sign-up</title>
 
