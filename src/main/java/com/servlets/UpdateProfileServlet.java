@@ -79,11 +79,11 @@ public class UpdateProfileServlet extends HttpServlet {
 			String verifyPass = request.getParameter("verify-password");
 
 			// Collecting and formating project types and skills w/o brackets
-			String[] theFocus = request.getParameterValues("focus");
+			String[] theFocus = request.getParameterValues("update-focus");
 			String focusString = Arrays.toString(theFocus);
 			String focusSubString = focusString.substring(1, focusString.length() - 1);
 
-			String[] theProjectType = request.getParameterValues("project_type");
+			String[] theProjectType = request.getParameterValues("update-project_type");
 			String projectTypeString = Arrays.toString(theProjectType);
 			String projectTypeSubString = projectTypeString.substring(1, projectTypeString.length() - 1);
 			
