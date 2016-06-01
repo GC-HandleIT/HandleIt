@@ -37,17 +37,24 @@ public class DevServlet extends HttpServlet {
 
 			if (!(theFirstName.equals(null))) {
 				
+				//Collecting and formating project types and skills w/o brackets
 				String[] projectTypes = request.getParameterValues("project_type");
-				String[] skillTypes = request.getParameterValues("skills");
+				String projectTypesString = Arrays.toString(projectTypes);
+				String projectTypesSubString = projectTypesString.substring(1,projectTypesString.length()-1);
 				
+				String[] skillTypes = request.getParameterValues("skills");
+				String skillsTypesString = Arrays.toString(skillTypes);
+				String skillsTypesSubString = skillsTypesString.substring(1, skillsTypesString.length()-1);
+				
+				//adding the collected form data to the DB
 				devToAddToDB.setFirstName(request.getParameter("form-first_name"));
 				devToAddToDB.setLastName(request.getParameter("form-last_name"));
 				devToAddToDB.setPassword(request.getParameter("form-password"));
 				devToAddToDB.setEmailAddress(request.getParameter("form-email_address"));
 				devToAddToDB.setLocation(request.getParameter("form-location"));
 				devToAddToDB.setProfileUrl(request.getParameter("form-profile_url"));
-				devToAddToDB.setProjects(Arrays.toString(projectTypes));
-				devToAddToDB.setSkills(Arrays.toString(skillTypes));
+				devToAddToDB.setProjects(projectTypesSubString);
+				devToAddToDB.setSkills(skillsTypesSubString);
 
 				System.out.println("Collected a dev table entry.");
 
@@ -61,6 +68,7 @@ public class DevServlet extends HttpServlet {
  
 		} catch (NullPointerException e) {
 
+			//searching the DB for a dev to login
 			boolean foundADev;
 
 			String searchByProjects = request.getParameter("project_type");

@@ -13,8 +13,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
+<link rel="shortcut icon" type="image/x-icon" href="img/logo-tnx.png" />
 
-<title>Developers Portal</title>
+<title>HandleIT Developer</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -96,8 +97,9 @@
 				</h2>
 
 				<form action="SearchRedirectServlet" method="post">
-				<input type="hidden" name="searchNPTable" value="searchNPTable" >
-					<input type="submit" value="Search for a NonProfit" name="searchNPTable">
+					<input type="hidden" name="searchNPTable" value="searchNPTable">
+					<input type="submit" value="Search for a NonProfit"
+						name="searchNPTable">
 				</form>
 
 				<hr>
@@ -129,6 +131,10 @@
 				<h4>LinkedIn URL</h4>
 				<p><%=helloDev.getProfileUrl()%></p>
 
+				<hr>
+
+				<a href="updatedevtable.jsp"><button>Update Your Profile</button></a>
+
 			</div>
 		</div>
 	</div>
@@ -156,6 +162,7 @@
 		</div>
 	</div>
 	</footer>
+
 
 	<!-- jQuery -->
 	<script src="js/jquery-2.2.3.js"></script>

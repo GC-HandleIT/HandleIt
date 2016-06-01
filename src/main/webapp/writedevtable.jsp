@@ -10,6 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="Dev DB Entryform" content="">
 <meta name="" content="">
+<link rel="shortcut icon" type="image/x-icon" href="img/logo-tnx.png" />
 
 <title>Developer Sign-up</title>
 
