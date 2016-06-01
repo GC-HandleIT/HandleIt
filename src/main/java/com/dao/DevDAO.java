@@ -15,8 +15,7 @@ public class DevDAO {
 	public static boolean passOrFail = false;
 	public static ArrayList<Developer> soughtDevs = new ArrayList<>();
 	public static Developer whoIsLogingIn = new Developer();
-	
-	
+
 	static final String JBDC_DRIVER = "com.mysql.jdbc.Driver";
 	static final String DB_URL = "jdbc:mysql://aamcrp1u0ce3lq.cowwq3mhevc0.us-east-1.rds.amazonaws.com:3306";
 	static final String USER = "handleit";
@@ -35,7 +34,7 @@ public class DevDAO {
 			System.out.println("Connecting to the Database");
 			conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
 			System.out.println("Connected to the Database");
-			System.out.println("Dev Side");
+			System.out.println("Dev Side\n");
 
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -89,6 +88,8 @@ public class DevDAO {
 		try {
 			initConnToDatabase();
 			prepStmt = conn.prepareStatement(insertToTable);
+
+			System.out.println(insertToTable);
 
 			prepStmt.setString(1, newDevObj.getFirstName());
 			prepStmt.setString(2, newDevObj.getLastName());
@@ -146,9 +147,46 @@ public class DevDAO {
 		return false;
 	}
 
+	public static void updateDevTable(Developer newDevObj, String email, String pass) {
+
+		String updateStmt = updateTheTable(newDevObj, email, pass);
+
+		try {
+			initConnToDatabase();
+			prepStmt = conn.prepareStatement(updateStmt);
+
+			System.out.println(prepStmt);
+
+			prepStmt.executeUpdate();
+
+			passOrFail = true;
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+	}
+
 	private static String insertToTable = "INSERT INTO `ebdb`.`devtable`"
 			+ "(`first_name`, `last_name`, `password`, `email_address`, `location`, `public_profile_url`, `projects`, `skills`)"
-			+ " VALUES " + "(?,?,?,?,?,?,?,?)";
+			+ " VALUES " + "(?,?,?,?,?,?,?,?);";
+
+	private static String updateTheTable(Developer newDevObj, String emailAddy, String password) {
+
+		String toUpdateTable = "UPDATE `ebdb`.`devtable` SET " + "`first_name` = '" + newDevObj.getFirstName() + "', "
+				+ "`last_name` = '" + newDevObj.getLastName() + "', " + "`password` = '" + newDevObj.getPassword()
+				+ "', " + "`email_address` = '" + newDevObj.getEmailAddress() + "', " + "`location` = '"
+				+ newDevObj.getLocation() + "', " + "`public_profile_url` = '" + newDevObj.getProfileUrl() + "', "
+				+ "`projects` = '" + newDevObj.getProjects() + "', " + "`skills` = '" + newDevObj.getSkills() + "' "
+				+ " WHERE " + "`email_address` LIKE '" + emailAddy + "'" + " AND " + "`password` LIKE '" + password
+				+ "';";
+
+		System.out.println("\nMade it to the update table string");
+		System.out.println(toUpdateTable);
+
+		return toUpdateTable;
+	}
+	
 
 	private static String whichStmt(String projectType, String skills) {
 
@@ -162,9 +200,8 @@ public class DevDAO {
 		} else if (skills.equalsIgnoreCase("*")) {
 			return "SELECT * FROM ebdb.devtable WHERE `projects` LIKE '%" + projectType + "%';";
 		}
-		return "SELECT * FROM ebdb.devtable WHERE `projects` LIKE '%" + projectType + "%' AND `skills` LIKE '%"
-				+ skills + "%';";
-
+		return "SELECT * FROM ebdb.devtable WHERE `projects` LIKE '%" + projectType + "%' AND `skills` LIKE '%" + skills
+				+ "%';";
 
 	}
 

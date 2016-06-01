@@ -71,8 +71,7 @@
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 				<div class="page-heading">
-					<h1 style="text-shadow: 2px 2px 4px #000000">NonProfit Sign-Up
-						Form</h1>
+					<h1 style="text-shadow: 2px 2px 4px #000000">NonProfit Profile Update</h1>
 					<hr class="small">
 					<span style="text-shadow: 2px 2px 4px #000000" class="subheading"></span>
 				</div>
@@ -85,125 +84,165 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-				<p>Please fill out each field, if left blank a null value will
-					be added to the database</p>
-				<form action="NonProfServlet" method="post">
-					<div class="row control-group"></div>
+				<form action="UpdateProfileServlet" method="post">
+				
+				<p>Please verify your original email and password.</p>
+				
+				<form action="UpdateProfileServlet" method="post">
+
+					<!-- Verify Email -->
 					<div class="row control-group">
-						<!-- 2 -->
+						<div
+							class="form-group col-xs-12 floating-label-form-group controls">
+							<label>Email Address</label> <input type="text"
+								class="form-control" placeholder="Email Address"
+								name="verify-email_address" id="email_address" required
+								data-validation-required-message="Please enter the email address.">
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+
+					<!-- Verify Password -->
+					<div class="row control-group">
+						<div
+							class="form-group col-xs-12 floating-label-form-group controls">
+							<label>Password</label> <input type="text" class="form-control"
+								placeholder="Password" name="verify-password" id="password"
+								required
+								data-validation-required-message="Please enter a password.">
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+
+					<br>
+					<p>Please fill out each field.</p>
+				
+				
+					<!-- np Name -->
+					<div class="row control-group">
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
 							<label>Name</label> <input type="text" class="form-control"
-								placeholder="NonProfit Name" name="form-name" id="name" required
+								placeholder="NonProfit Name" name="update-name" id="name" required
 								data-validation-required-message="Please enter the NonProfit name.">
 							<p class="help-block text-danger"></p>
 						</div>
 					</div>
+					
+					<!-- Password -->
 					<div class="row control-group">
-						<!-- 3 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
 							<label>Password</label> <input type="text" class="form-control"
-								placeholder="Password" name="form-password" id="password"
+								placeholder="Password" name="update-password" id="password"
 								required
 								data-validation-required-message="Please enter your password.">
 							<p class="help-block text-danger"></p>
 						</div>
 					</div>
+					
+					<!-- Link -->
 					<div class="row control-group">
-						<!-- 4 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
 							<label>NonProfit Link</label> <input type="text"
 								class="form-control" placeholder="NonProfit Link"
-								name="form-link" id="link" required
+								name="update-link" id="link" required
 								data-validation-required-message="Please enter a link for the NonProfit.">
 							<p class="help-block text-danger"></p>
 						</div>
 					</div>
+					
+					<!-- Contact Person Name -->
 					<div class="row control-group">
-						<!-- 5 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
 							<label>Contact Person</label> <input type="text"
 								class="form-control" placeholder="Contact Person"
-								name="form-contact_person" id="contact_person" required
+								name="update-contact_person" id="contact_person" required
 								data-validation-required-message="Please enter the name of the contact person.">
 							<p class="help-block text-danger"></p>
 						</div>
 					</div>
+					
+					<!-- Contact Person Email -->
 					<div class="row control-group">
-						<!-- 6 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
 
 							<label>Email Address</label> <input type="text"
 								class="form-control" placeholder="Contact Person Email"
-								name="form-email" id="email" required
+								name="update-email" id="email" required
 								data-validation-required-message="Please enter the email address of the contact person.">
 							<p class="help-block text-danger"></p>
 							<div id='status'></div>
 						</div>
 					</div>
+					
+					<!-- Location -->
 					<div class="row control-group">
-						<!-- 8 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
 							<label>Location</label> <input type="text" class="form-control"
-								placeholder="Location" name="form-location" id="location"
+								placeholder="Location" name="update-location" id="location"
 								required
 								data-validation-required-message="Please enter the location of the NonProfit.">
 						</div>
 					</div>
+					
+					<!-- Project Type -->
 					<div class="row control-group">
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
 							<label>Projects</label>
 							<div style="font-size: 1.5em; color: #808080;">
 								<p>Projects</p>
-								<input type="checkbox" name="project_type" value="*">All</input><br>
-								<input type="checkbox" name="project_type" value="Database">Database</input><br>
-								<input type="checkbox" name="project_type"
+								<input type="checkbox" name="update-project_type" value="*">All</input><br>
+								<input type="checkbox" name="update-project_type" value="Database">Database</input><br>
+								<input type="checkbox" name="update-project_type"
 									value="Simple Website">Simple Website</input><br> <input
-									type="checkbox" name="project_type" value="Web Application">Web
-								Application</input><br> <input type="checkbox" name="project_type"
+									type="checkbox" name="update-project_type" value="Web Application">Web
+								Application</input><br> <input type="checkbox" name="update-project_type"
 									value="Android Application">Android Application</input><br>
-								<input type="checkbox" name="project_type"
+								<input type="checkbox" name="update-project_type"
 									value="IOS Application">IOS Application</input>
 							</div>
 						</div>
 					</div>
+					
+					<!-- Focus -->
 					<div class="row control-group">
-						<!-- 7 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
 							<label>Projects</label>
 							<div style="font-size: 1.5em; color: #808080;">
 								<p>Projects</p>
-								<input type="checkbox" name="focus" value="*">All</input><br>
-								<input type="checkbox" name="focus" value="Animals">Animals</input><br>
-								<input type="checkbox" name="focus" value="Children">Children</input><br>
-								<input type="checkbox" name="focus" value="Environment">Environment</input><br>
-								<input type="checkbox" name="focus" value="Homelessness">Homelessness</input><br>
-								<input type="checkbox" name="focus" value="LGBTQIA">LGBTQIA</input><br>
-								<input type="checkbox" name="focus" value="Mental Health">Mental
-								Health</input><br> <input type="checkbox" name="focus"
+								<input type="checkbox" name="update-focus" value="*">All</input><br>
+								<input type="checkbox" name="update-focus" value="Animals">Animals</input><br>
+								<input type="checkbox" name="update-focus" value="Children">Children</input><br>
+								<input type="checkbox" name="update-focus" value="Environment">Environment</input><br>
+								<input type="checkbox" name="update-focus" value="Homelessness">Homelessness</input><br>
+								<input type="checkbox" name="update-focus" value="LGBTQIA">LGBTQIA</input><br>
+								<input type="checkbox" name="update-focus" value="Mental Health">Mental
+								Health</input><br> <input type="checkbox" name="update-focus"
 									value="Science, Technology, Engineering, and Mathematics">Science,
 								Technology, Engineering, and Mathematics</input><br> <input
-									type="checkbox" name="focus" value="Social Equality">Social
-								Equality</input><br> <input type="checkbox" name="focus"
+									type="checkbox" name="update-focus" value="Social Equality">Social
+								Equality</input><br> <input type="checkbox" name="update-focus"
 									value="Women's Social Issues">Women's Social Issues</input><br>
-								<input type="checkbox" name="focus" value="Other">Other</input><br>
+								<input type="checkbox" name="update-focus" value="Other">Other</input><br>
 							</div>
 						</div>
 					</div>
+					
+					<!-- Project Description -->
 					<div class="row control-group">
 						<!-- 10 -->
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
 							<label>Project Description</label> <input type="text"
 								class="form-control" placeholder="Project Description"
-								name="form-project_description" id="form-project_description"
+								name="update-project_description" id="update-project_description"
 								required
 								data-validation-required-message="Please enter the description of the project.">
 							<p class="help-block text-danger"></p>

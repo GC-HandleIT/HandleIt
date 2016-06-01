@@ -118,8 +118,8 @@ public class NonProfitDAO {
 
 			initConnToDatabase();
 			stmt = conn.createStatement();
-			resSet = stmt.executeQuery("SELECT * FROM `ebdb`.`nonprofittable` where `email_address` like '"
-					+ email + "' and `password` like '" + password + "';");
+			resSet = stmt.executeQuery("SELECT * FROM `ebdb`.`nonprofittable` where `email_address` like '" + email
+					+ "' and `password` like '" + password + "';");
 
 			while (resSet.next()) {
 
@@ -147,6 +147,26 @@ public class NonProfitDAO {
 		return false;
 	}
 
+	public static void updateNpTable(NonProfit newNPObj, String email, String pass) {
+
+		String updateStmt = updateTheTable(newNPObj, email, pass);
+
+		try {
+			initConnToDatabase();
+			prepStmt = conn.prepareStatement(updateStmt);
+
+			System.out.println(prepStmt);
+
+			prepStmt.executeUpdate();
+
+			passOrFail = true;
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+	}
+
 	private static String insertToTable = "INSERT INTO `ebdb`.`nonprofittable` "
 			+ "(`name`, `password`, `link`, `contact_person`, `email_address`, `location`, `focus`, `project_type`, `project_description`)"
 			+ " VALUES " + "(?,?,?,?,?,?,?,?,?)";
@@ -166,6 +186,26 @@ public class NonProfitDAO {
 		return "SELECT * FROM ebdb.nonprofittable WHERE `focus` LIKE '%" + focus + "%' AND `project_type` LIKE '%"
 				+ projectType + "%';";
 
+	}
 
+	private static String updateTheTable(NonProfit newNPObj, String emailAddy, String password) {
+
+		String toUpdateTable = "UPDATE `ebdb`.`nonprofittable` SET " 
+				+ "`name` = '" + newNPObj.getName() + "', "
+				+ "`password` = '" + newNPObj.getPassword() + "', " 
+				+ "`link` = '" + newNPObj.getLink() + "', "
+				+ "`contact_person` = '" + newNPObj.getContactPerson() + "', " 
+				+ "`email_address` = '" + newNPObj.getEmailAddress() + "', " 
+				+ "`location` = '" + newNPObj.getLocation() + "', " 
+				+ "`focus` = '" + newNPObj.getFocus() + "', " 
+				+ "`project_type` = '" + newNPObj.getProjectType() + "', "
+				+ "`project_description` = '" + newNPObj.getProjectDescription() + "'" 
+				+ " WHERE "
+				+ "`email_address` LIKE '" + emailAddy + "'" + " AND " + "`password` LIKE '" + password + "';";
+
+		System.out.println("\nMade it to the update table string");
+		System.out.println(toUpdateTable);
+
+		return toUpdateTable;
 	}
 }

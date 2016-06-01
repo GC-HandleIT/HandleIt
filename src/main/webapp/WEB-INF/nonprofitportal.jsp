@@ -96,8 +96,9 @@
 				</h2>
 
 				<form action="NPRedirectServlet" method="post">
-				<input type="hidden" name="searchDevTable" value="searchDevTable" >
-					<input type="submit" value="Search for a Developer" name="searchDevTable">
+					<input type="hidden" name="searchDevTable" value="searchDevTable">
+					<input type="submit" value="Search for a Developer"
+						name="searchDevTable">
 				</form>
 
 				<hr>
@@ -127,6 +128,11 @@
 
 				<h4>Link</h4>
 				<p><%=helloNP.getLink()%></p>
+				
+				<hr>
+
+				<a href="updatenptable.jsp"><button>Update Your
+						Profile</button></a>
 
 			</div>
 		</div>
