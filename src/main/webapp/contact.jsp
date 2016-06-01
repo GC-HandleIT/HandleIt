@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
@@ -84,7 +85,7 @@
 				<p>Questions? Comments? Concerns? We will make every attempt to
 					respond to you within 24 hours!</p>
 
-				<form name="sentMessage" id="contactForm" novalidate>
+				<form  name="EmailServlet" id="contactForm" novalidate>
 					<div class="row control-group">
 						<div
 							class="form-group col-xs-12 floating-label-form-group controls">
@@ -95,7 +96,7 @@
 						</div>
 					</div>
 					<div class="row control-group">
-						<div
+							<div
 							class="form-group col-xs-12 floating-label-form-group controls">
 							<label>Email Address</label> <input type="email"
 								class="form-control" placeholder="Email Address" id="email"
@@ -128,7 +129,8 @@
 					<div id="success"></div>
 					<div class="row">
 						<div class="form-group col-xs-12">
-							<button type="submit" class="btn btn-default">Send</button>
+							<button class="btn btn-default" input type="submit" onclick="submitEmail()" >Send </button>
+									
 						</div>
 					</div>
 				</form>
@@ -169,5 +171,19 @@
 	<script src="js/clean-blog.min.js"></script>
 
 </body>
+
+<script type="text/javascript">
+
+function submitEmail(){
+	
+	var eventSource = new EventSource("EmailServlet");
+	
+	}
+
+
+
+
+
+</script>
 
 </html>
