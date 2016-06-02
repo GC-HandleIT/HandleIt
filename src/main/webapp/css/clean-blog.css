@@ -45,6 +45,7 @@ hr.small {
 	margin: 15px auto;
 	border-width: 4px;
 	border-color: white;
+	border-color: #000000;
 }
 
 .navbar-custom {
@@ -427,4 +428,8 @@ img::-moz-selection {
 
 body {
 	webkit-tap-highlight-color: #0085a1;
+}
+
+hr {
+	border-color: #666666;
 }

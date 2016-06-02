@@ -1414,7 +1414,7 @@ hr {
 	margin-top: 20px;
 	margin-bottom: 20px;
 	border: 0;
-	border-top: 1px solid #eee
+	border-top: 1px solid #000000;
 }
 
 .sr-only {
@@ -7403,4 +7403,9 @@ button.close {
 		display: none !important
 	}
 }
+
+hr {
+	border-color: #666666;
+}
+
 /*# sourceMappingURL=bootstrap.min.css.map */

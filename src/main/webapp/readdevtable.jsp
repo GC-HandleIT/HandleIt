@@ -92,16 +92,20 @@
 							for (int i = 0; i < DevDAO.soughtDevs.size(); i++) {
 								Developer devForTable = new Developer();
 								devForTable = DevDAO.soughtDevs.get(i);
+								String firstName = devForTable.getFirstName();
+								String lastName = devForTable.getLastName();
+								String nameFormatted = firstName + " " + lastName;
 					%>
 					<ul>
-						<li><%=devForTable.getFirstName()%></li>
+						<li style="font-weight: 800; text-decoration: underline;"><%=nameFormatted%></li>
 						<li><%=devForTable.getEmailAddress()%></li>
 						<li><%=devForTable.getLocation()%></li>
-						<li><a href="<%=devForTable.getProfileUrl()%>"
+						<li><a style="color: #0000ff;" href="<%=devForTable.getProfileUrl()%>"
 							target="_blank">LinkedIn</a></li>
 						<li><%=devForTable.getProjects()%></li>
 						<li><%=devForTable.getSkills()%></li>
 					</ul>
+					<br>
 					<hr>
 					<%
 						}

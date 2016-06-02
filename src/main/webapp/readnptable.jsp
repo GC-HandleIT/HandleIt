@@ -99,25 +99,23 @@
 								npForTable = NonProfitDAO.soughtNps.get(i);
 					%>
 					<ul>
-						<li><%=npForTable.getName()%></li>
+						<li style="font-weight: 800; text-decoration: underline;"><%=npForTable.getName()%></li>
 						<li><%=npForTable.getContactPerson()%></li>
 						<li><%=npForTable.getEmailAddress()%></li>
 						<li><%=npForTable.getLocation()%></li>
-						<li><a href="<%=npForTable.getLink()%>" target="_blank">Link</a></li>
+<%-- 						<li><a href="<%=npForTable.getLink()%>" target="_blank">Link</a></li> --%>
 						<li><%=npForTable.getFocus()%></li>
 						<li><%=npForTable.getProjectDescription()%></li>
 						<li><%=npForTable.getProjectType()%></li>
 					</ul>
+					<br>
 					<hr>
 					<%
 						}
 						}
-					%>
-
-					<%
+					
 						NonProfitDAO.soughtNps.clear();
 					%>
-					<hr>
 
 				</form>
 			</div>
@@ -125,7 +123,7 @@
 	</div>
 	</article>
 
-	<hr>
+	<hr.large>
 
 	<!-- Footer -->
 	<footer>
@@ -155,7 +153,7 @@
 	<script src="js/bootstrap.min.js"></script>
 
 	<!-- Custom Theme JavaScript -->
-	<script src="js/clean-blog.min.js"></script>
+	<script src="js/clean-blog.=min.js"></script>
 
 </body>
 

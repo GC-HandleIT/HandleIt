@@ -1,4 +1,4 @@
- /*!
+/*!
  * Clean Blog v1.0.0 (http://startbootstrap.com)
  * Copyright 2014 Start Bootstrap
  * Licensed under Apache 2.0 (https://github.com/IronSummitMedia/startbootstrap/blob/gh-pages/LICENSE)
@@ -44,7 +44,7 @@ hr.small {
 	max-width: 100px;
 	margin: 15px auto;
 	border-width: 4px;
-	border-color: #fff
+	border-color: #fff;
 }
 
 .navbar-custom {
@@ -334,30 +334,52 @@ footer .copyright {
 }
 
 .floating-label-form-group
+
+
 :
+
+
 :not
+
  
+
 (
 :first-child
+
  
+
 ){
 padding-left
+
+
 :
+
  
+
 14
 px
-;
 
-	
+
+;
 border-left
+
+
 :
+
  
+
 1
 px
+
  
+
 solid
+
  
+
 #eee
+
+
 
 
 }
@@ -450,24 +472,28 @@ body {
 }
 
 .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
 }
 
 .dropdown-content {
-    display: none;
-    background-color: #66b3ff;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	display: none;
+	background-color: #66b3ff;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown {
-    position: relative;
-    display: inline-block;
+	position: relative;
+	display: inline-block;
 }
 
 .theCheckboxes {
 	
+}
+
+hr {
+	border-color: #666666;
 }
