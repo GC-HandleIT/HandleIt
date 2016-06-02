@@ -1,19 +1,13 @@
 package com.dao;
 
-import java.net.PasswordAuthentication;
 import java.util.Properties;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-import javax.mail.Authenticator;
-import javax.mail.internet.InternetAddress;
 import javax.mail.Message;
 import javax.mail.MessagingException;
-import javax.mail.NoSuchProviderException;
 import javax.mail.Session;
 import javax.mail.Transport;
-import javax.mail.event.TransportAdapter;
-import javax.mail.event.TransportEvent;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
