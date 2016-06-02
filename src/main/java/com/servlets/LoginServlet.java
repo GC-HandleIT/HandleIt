@@ -26,7 +26,9 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+
+		response.sendRedirect("index.jsp");
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -51,8 +53,9 @@ public class LoginServlet extends HttpServlet {
 					request.getRequestDispatcher("/WEB-INF/developerportal.jsp").forward(request, response);
 
 				} else {
-					response.sendRedirect("index.jsp");
+					response.sendRedirect("loginfailed.jsp");
 					System.out.println("Invalid user, please try again.");
+
 				}
 			}
 
@@ -75,13 +78,13 @@ public class LoginServlet extends HttpServlet {
 						System.out.println("NP was found and redirected.");
 
 					} else {
-						response.sendRedirect("index.jsp");
+						response.sendRedirect("loginfailed.jsp");
 						System.out.println("Invalid user, please try again.");
 					}
 				}
 
 			} catch (NullPointerException ex) {
-				response.sendRedirect("index.jsp");
+				response.sendRedirect("loginfailed.jsp");
 				System.out.println("Something went quite wrong");
 			}
 

@@ -36,17 +36,18 @@ public class DevServlet extends HttpServlet {
 		try {
 
 			if (!(theFirstName.equals(null))) {
-				
-				//Collecting and formating project types and skills w/o brackets
+
+				// Collecting and formating project types and skills w/o
+				// brackets
 				String[] projectTypes = request.getParameterValues("project_type");
 				String projectTypesString = Arrays.toString(projectTypes);
-				String projectTypesSubString = projectTypesString.substring(1,projectTypesString.length()-1);
-				
+				String projectTypesSubString = projectTypesString.substring(1, projectTypesString.length() - 1);
+
 				String[] skillTypes = request.getParameterValues("skills");
 				String skillsTypesString = Arrays.toString(skillTypes);
-				String skillsTypesSubString = skillsTypesString.substring(1, skillsTypesString.length()-1);
-				
-				//adding the collected form data to the DB
+				String skillsTypesSubString = skillsTypesString.substring(1, skillsTypesString.length() - 1);
+
+				// adding the collected form data to the DB
 				devToAddToDB.setFirstName(request.getParameter("form-first_name"));
 				devToAddToDB.setLastName(request.getParameter("form-last_name"));
 				devToAddToDB.setPassword(request.getParameter("form-password"));
@@ -65,10 +66,10 @@ public class DevServlet extends HttpServlet {
 					System.out.println("Dev has been added to the db.");
 				}
 			}
- 
+
 		} catch (NullPointerException e) {
 
-			//searching the DB for a dev to login
+			// searching the DB for a dev to login
 			boolean foundADev;
 
 			String searchByProjects = request.getParameter("project_type");

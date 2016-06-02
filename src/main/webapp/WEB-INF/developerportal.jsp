@@ -133,7 +133,8 @@
 
 				<hr>
 
-				<a href="updatedevtable.jsp"><button>Update Your Profile</button></a>
+				<a href="updatedevtable.jsp"><button>Update Your
+						Profile</button></a>
 
 			</div>
 		</div>

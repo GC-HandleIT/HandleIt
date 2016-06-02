@@ -57,19 +57,23 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
 
-				<li style="position:relative; display: inline-block; text-shadow: 2px 2px 4px #000000;"
+				<li
+					style="position: relative; display: inline-block; text-shadow: 2px 2px 4px #000000;"
 					class="dropdown"><a href="javascript:void(0)" class="dropbtn"
 					onclick="dropFunctionSign()">Sign-Up</a>
-					<div style="position: absolute; display: none; text-shadow: 2px 2px 4px #000000;"
+					<div
+						style="position: absolute; display: none; text-shadow: 2px 2px 4px #000000;"
 						class="dropdown-content" id="signDropdown">
 						<a href="writedevtable.jsp">Developer</a> <a
 							href="writenptable.jsp">NonProfit</a>
 					</div></li>
 
-				<li style="position: relative; display: inline-block; text-shadow: 2px 2px 4px #000000;"
+				<li
+					style="position: relative; display: inline-block; text-shadow: 2px 2px 4px #000000;"
 					class="dropdown"><a href="javascript:void(0)" class="dropbtn"
 					onclick="dropFunctionLog()">Login</a>
-					<div style="position: absolute; display: none; text-shadow: 2px 2px 4px #000000;"
+					<div
+						style="position: absolute; display: none; text-shadow: 2px 2px 4px #000000;"
 						class="dropdown-content" id="loginDropdown">
 						<a href="devlogin.jsp">Developer</a> <a href="nplogin.jsp">NonProfit</a>
 					</div></li>
@@ -79,7 +83,7 @@
 			</ul>
 		</div>
 	</div>
-	
+
 	<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container --> </nav>

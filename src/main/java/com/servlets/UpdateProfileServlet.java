@@ -86,9 +86,8 @@ public class UpdateProfileServlet extends HttpServlet {
 			String[] theProjectType = request.getParameterValues("update-project_type");
 			String projectTypeString = Arrays.toString(theProjectType);
 			String projectTypeSubString = projectTypeString.substring(1, projectTypeString.length() - 1);
-			
+
 			NonProfit npToUpdate = new NonProfit();
-			
 
 			npToUpdate.setName(request.getParameter("update-name"));
 			npToUpdate.setPassword(request.getParameter("update-password"));

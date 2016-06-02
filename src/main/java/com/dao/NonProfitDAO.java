@@ -190,17 +190,12 @@ public class NonProfitDAO {
 
 	private static String updateTheTable(NonProfit newNPObj, String emailAddy, String password) {
 
-		String toUpdateTable = "UPDATE `ebdb`.`nonprofittable` SET " 
-				+ "`name` = '" + newNPObj.getName() + "', "
-				+ "`password` = '" + newNPObj.getPassword() + "', " 
-				+ "`link` = '" + newNPObj.getLink() + "', "
-				+ "`contact_person` = '" + newNPObj.getContactPerson() + "', " 
-				+ "`email_address` = '" + newNPObj.getEmailAddress() + "', " 
-				+ "`location` = '" + newNPObj.getLocation() + "', " 
-				+ "`focus` = '" + newNPObj.getFocus() + "', " 
-				+ "`project_type` = '" + newNPObj.getProjectType() + "', "
-				+ "`project_description` = '" + newNPObj.getProjectDescription() + "'" 
-				+ " WHERE "
+		String toUpdateTable = "UPDATE `ebdb`.`nonprofittable` SET " + "`name` = '" + newNPObj.getName() + "', "
+				+ "`password` = '" + newNPObj.getPassword() + "', " + "`link` = '" + newNPObj.getLink() + "', "
+				+ "`contact_person` = '" + newNPObj.getContactPerson() + "', " + "`email_address` = '"
+				+ newNPObj.getEmailAddress() + "', " + "`location` = '" + newNPObj.getLocation() + "', " + "`focus` = '"
+				+ newNPObj.getFocus() + "', " + "`project_type` = '" + newNPObj.getProjectType() + "', "
+				+ "`project_description` = '" + newNPObj.getProjectDescription() + "'" + " WHERE "
 				+ "`email_address` LIKE '" + emailAddy + "'" + " AND " + "`password` LIKE '" + password + "';";
 
 		System.out.println("\nMade it to the update table string");
