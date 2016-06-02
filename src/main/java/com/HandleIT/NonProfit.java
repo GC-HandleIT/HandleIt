@@ -12,8 +12,8 @@ public class NonProfit {
 	private String projectType;
 	private String projectDescription;
 
-	public NonProfit(String name, String password, String link, String contactPerson, String emailAddress,
-			String focus, String location, String projectType, String projectDescription) {
+	public NonProfit(String name, String password, String link, String contactPerson, String emailAddress, String focus,
+			String location, String projectType, String projectDescription) {
 		super();
 		this.name = name;
 		this.password = password;

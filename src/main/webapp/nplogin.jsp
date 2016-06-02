@@ -139,32 +139,7 @@
 	<script src="js/clean-blog.min.js"></script>
 
 
-	<script>
-		document.getElementById("dbEF").onclick = function() {
-			password()
-		};
 
-		function password() {
-			var testV = 1;
-			var pass1 = prompt('Please Enter Your Password', ' ');
-			while (testV < 3) {
-				if (!pass1)
-
-					document
-				if (pass1.toLowerCase() == "letmein") {
-					document.getElementById("subBtn").disabled = false;
-					break;
-				}
-				testV += 1;
-				var pass1 = prompt(
-						'Access Denied - Password Incorrect, Please Try Again.',
-						'Password');
-			}
-			if (pass1.toLowerCase() != "password" & testV == 3)
-				document.getElementById("subBtn").disabled = true;
-			return " ";
-		}
-	</script>
 
 
 

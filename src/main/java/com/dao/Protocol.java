@@ -1,9 +1,5 @@
 package com.dao;
 
 public enum Protocol {
-	SMTP,
-	SMTPS,
-	TLS,
-	POP3,
-	IMAP
+	SMTP, SMTPS, TLS, POP3, IMAP
 }

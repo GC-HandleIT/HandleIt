@@ -4,6 +4,7 @@ import java.util.Properties;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+import javax.mail.Address;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
@@ -16,6 +17,7 @@ import javax.mail.internet.MimeMessage;
  */
 @Stateless
 @LocalBean
+
 public class EmailSessonBean {
 
 	private String port = "465";
@@ -28,12 +30,10 @@ public class EmailSessonBean {
 	private Protocol protocol = Protocol.SMTPS;
 	private boolean debug = true;
 
-	public void sendEmail(String name, String email, String phone, String message) throws MessagingException {
-		
-		
-		
-		
+	public void sendEmail(String name, Address email, String phone, String message) throws MessagingException {
+
 		Properties prop = new Properties();
+
 		prop.put("mail.smtp.auth", true);
 		prop.getProperty("mail.transport.protocol");
 		prop.put("mail.smtp.host", host);
@@ -58,14 +58,12 @@ public class EmailSessonBean {
 		}
 
 		Session session = Session.getInstance(prop, null);
-			
+
 		Transport transport = session.getTransport("smtp");
-	
-	
+
 		try {
-		MimeMessage message1 = new MimeMessage(session);
-		
-		
+			MimeMessage message1 = new MimeMessage(session);
+
 			message1.setFrom(email);
 			message1.addRecipient(Message.RecipientType.TO, new InternetAddress("thehandleitproject@gmail.com"));
 			message1.setSubject(phone);

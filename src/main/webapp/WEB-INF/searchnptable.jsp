@@ -112,10 +112,12 @@
 								<option value="Homelessness">Homelessness</option>
 								<option value="LGBTQIA">LGBTQIA</option>
 								<option value="Mental Health">Mental Health</option>
-								<option value="Science, Technology, Engineering, and Mathematics">Science, Technology, Engineering,
-									and Mathematics</option>
+								<option
+									value="Science, Technology, Engineering, and Mathematics">Science,
+									Technology, Engineering, and Mathematics</option>
 								<option value="Social Equality">Social Equality</option>
-								<option value="Women's Social Issues">Women's Social Issues</option>
+								<option value="Women's Social Issues">Women's Social
+									Issues</option>
 								<option value="Other">Other</option>
 						</select></td>
 					</table>

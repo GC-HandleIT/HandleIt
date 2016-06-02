@@ -10,16 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/NPRedirectServlet")
 public class NPRedirectServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public NPRedirectServlet() {
-        super();
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public NPRedirectServlet() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		String goToSearchByDevPage = request.getParameter("searchDevTable");
 		System.out.println(goToSearchByDevPage);
@@ -37,7 +39,7 @@ public class NPRedirectServlet extends HttpServlet {
 		} else {
 			request.getRequestDispatcher("index.jsp");
 		}
-		
+
 	}
 
 }

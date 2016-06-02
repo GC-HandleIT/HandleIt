@@ -128,11 +128,10 @@
 
 				<h4>Link</h4>
 				<p><%=helloNP.getLink()%></p>
-				
+
 				<hr>
 
-				<a href="updatenptable.jsp"><button>Update Your
-						Profile</button></a>
+				<a href="updatenptable.jsp"><button>Update Your Profile</button></a>
 
 			</div>
 		</div>

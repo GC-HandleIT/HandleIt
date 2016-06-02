@@ -186,7 +186,6 @@ public class DevDAO {
 
 		return toUpdateTable;
 	}
-	
 
 	private static String whichStmt(String projectType, String skills) {
 
